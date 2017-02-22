@@ -1,0 +1,105 @@
+div.frontpage-poster {
+    background: url('/images/poster-front-page.jpg') no-repeat top center fixed; 
+     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+}
+
+nav.frontpage {
+    overflow-y:hidden;
+    height: 3em;
+    display: none;
+}
+
+.affiche-paris { 
+    width: 500px;
+    height: 600px;
+    border-radius: .5em;
+    position: absolute;  /* remove from flow so sunset is placed on top */
+    z-index: 1;
+    background:  url(/images/paris-miniature.jpg) no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+.affiche-marseille {
+    width: 500px;
+    height: 600px;
+    border-radius: .5em;
+    /* skew back by negative of parent’s skew so contents is upright */
+    transform: skewX(20deg);
+    margin-left: 76px; /* give margin to push content away from left slanted edge */
+    background: url(/images/marseille-miniature.jpg) no-repeat;
+    background-size: cover;
+    pointer-events: auto;    /* allow pointer events for the box */
+}
+
+.affiche-lyon {
+    width: 500px;
+    height: 600px;
+    border-radius: .5em;
+    /* skew back by negative of parent’s skew so contents is upright */
+    transform: skewX(20deg);
+    margin-left: 76px; /* give margin to push content away from left slanted edge */
+    background: url(/images/lyon-miniature.jpg) no-repeat;
+    background-size: cover;
+    pointer-events: auto;    /* allow pointer events for the box */
+}
+
+.slider-affiches-pm {
+    /* set initial width */
+    width: 600px;
+    
+    /* hide the content that overflows (to allow second box to show through) */
+    overflow: hidden;
+    display: inline-block;
+    
+    /* skew container so that it has angled edge, and set up transition */
+    transform: skewX(-20deg);
+    transition: width 1.2s ease-in-out;
+    
+    margin-left: -76px;
+           
+    /* hide pointer events for unseen content */
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.slider-affiches-ml {
+    /* set initial width */
+    width: 300px;
+    
+    /* hide the content that overflows (to allow second box to show through) */
+    overflow: hidden;
+    display: inline-block;
+    
+    /* skew container so that it has angled edge, and set up transition */
+    transform: skewX(-20deg);
+    transition: width 1.2s ease-in-out;
+    
+    margin-left: -76px;
+           
+    /* hide pointer events for unseen content */
+    pointer-events: none;
+    position: absolute;
+    z-index: 3;
+}
+
+
+
+/* make first box bigger on hover, and smaller when hover second box */
+.slider-affiches-pm:hover {
+    width: 750px;
+}
+        
+.affiche-paris:hover + slider-affiches-pm {
+    width: 250px;
+}
+
+.slider-affiches-pm:hover + slider-affiches-ml {
+    width: 250px;
+}
