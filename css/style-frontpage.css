@@ -110,7 +110,7 @@ nav.frontpage {
     background-color: rgba(38, 26, 13, 0.8);
 }
 
-.affiche-container:hover .affiche-verso {
+.affiche-container:hover .affiche-verso, .affiche-hoover {
     transform: translateY(0%);
     visibility: visible;
     opacity: 1;
@@ -122,9 +122,9 @@ nav.frontpage {
 .affiche-marseille-container .affiche-verso div.text-center { transform: skewX(-5deg); }
 .affiche-lyon-container .affiche-verso div.text-center { transform: skewX(4deg); }
 
-.affiche-paris-container:hover .affiche-verso { z-index: 2; }
-.affiche-marseille-container:hover .affiche-verso { z-index: 4; }
-.affiche-lyon-container:hover .affiche-verso { z-index: 6; }
+.affiche-paris-container:hover .affiche-verso, .affiche-hoover { z-index: 2; }
+.affiche-marseille-container:hover .affiche-verso, .affiche-hoover  { z-index: 4; }
+.affiche-lyon-container:hover .affiche-verso, .affiche-hoover { z-index: 6; }
 
 div.affiches { clear: both; }
 div.affiches .text-center {

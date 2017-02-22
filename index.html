@@ -7,7 +7,13 @@ layout: frontpage
     $('html,body').animate({scrollTop: $('.section-affiches').offset().top},'slow');
     $(window).off('scroll');
     $('.navbar').slideDown("slow");
-    $(".affiche-paris-container").trigger("mouseenter");
+
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").addClass('affiche-hoover');},500);
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},2000);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").addClass('affiche-hoover');},700);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},2200);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").addClass('affiche-hoover');},900);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},2400);
   }
   $(window).on('scroll', scroll_to_menu);
 
@@ -75,7 +81,7 @@ layout: frontpage
 </nav>
 
 <div class="container row text-center center section-affiches">
-  <div class="col-sm-12" style="padding:3em; width:100vw"> <!-- :-/ -->
+  <div class="col-sm-12" style="padding:4em; width:100vw"> <!-- :-/ -->
     <div class="catchphrase text-center">
       <p>
 	  La journée de π part en tournée ! Coup d'envoi le 14 mars 2017 pour la cinquième édition de la <a href="{{ '/Concept/' | prepend: site.baseurl }}">journée de π</a>.
@@ -144,29 +150,3 @@ layout: frontpage
     </div>
   </div>
 </div>
-
-<!--  <div class="affiches">
-    <!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) ->
-    <div class="box affiche-marseille-container">
-      <figure>
-	<div class="box affiche-marseille affiche-recto"></div>
-	<figcaption class="affiche-verso"><p>AAA</p>
-	</figcaption>
-      </figure>
-    </div>
-    <div class="box affiche-paris-container">
-      <figure>
-	<div class="box affiche-paris  affiche-recto"></div>
-	<figcaption class="affiche-verso">AAA
-	</figcaption>
-      </figure>
-    </div>
-    <div class="box affiche-lyon-container">
-      <figure>
-	<div class="box affiche-lyon affiche-recto"></div>
-	<figcaption class="affiche-verso">AAA
-	</figcaption>
-      </figure>
-    </div>
-  </div>
-</div> -->
