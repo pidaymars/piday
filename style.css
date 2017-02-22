@@ -1,0 +1,8 @@
+#logo {
+	width: 1280px;
+    background-image: url('landscape-version.jpg'); /* cette ligne sera ignorée si le svg est supporté */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /*background-attachment: fixed;*/
+}
