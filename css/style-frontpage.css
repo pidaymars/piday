@@ -8,9 +8,13 @@ div.frontpage-poster {
     height: 100vh;
 }
 
+div.section-affiches {
+    padding-top: 3em;
+}
+
+
 nav.frontpage {
     overflow-y:hidden;
-    height: 3em;
     display: none;
 }
 
@@ -34,7 +38,6 @@ nav.frontpage {
     display: inline-block;
     z-index: 1;
 }
-
 .affiche-marseille { 
     width: 35.65vw;
     height: 44.17vw;
@@ -44,7 +47,7 @@ nav.frontpage {
     background-size: cover;
     position: absolute;
     transform: skewX(-5deg);
-    z-index: 20;
+    z-index: 3;
 }
 .affiche-marseille-container { 
     width: 35.65vw;
@@ -55,10 +58,8 @@ nav.frontpage {
     overflow: hidden;
     display: inline-block;
     transform: skewX(5deg);
-    transition: width 1.2s ease-in-out;
-    z-index: 20;
+    z-index: 3;
 }
-
 .affiche-lyon { 
     width: 35.65vw;
     height: 44.17vw;
@@ -68,7 +69,7 @@ nav.frontpage {
     background-size: cover;
     position: absolute;
     transform: skewX(4deg);
-    z-index: 30;
+    z-index: 5;
 }
 .affiche-lyon-container { 
     width: 35.65vw;
@@ -79,61 +80,113 @@ nav.frontpage {
     overflow: hidden;
     display: inline-block;
     transform: skewX(-4deg);
-    transition: width 1.2s ease-in-out;
-    z-index: 30;
+    z-index: 5;
 }
 
-.slider-affiches-pm {
-    /* set initial width */
-    width: 600px;
-    
-    /* hide the content that overflows (to allow second box to show through) */
-    overflow: hidden;
-    display: inline-block;
-    
-    /* skew container so that it has angled edge, and set up transition */
-    transform: skewX(-20deg);
-    transition: width 1.2s ease-in-out;
-    
-    margin-left: -76px;
-           
-    /* hide pointer events for unseen content */
-    pointer-events: none;
+.affiche-verso {
+    display: block;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 2;
+    padding: 1em;
+    transform: translateY(-2em);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+.affiche-paris-container .affiche-verso {
+    display: block;
+    background-color: rgba(13, 24, 38, 0.8);
+}
+.affiche-marseille-container .affiche-verso {
+    display: block;
+    background-color: rgba(8, 43, 33, 0.8);
+}
+.affiche-lyon-container .affiche-verso {
+    display: block;
+    background-color: rgba(38, 26, 13, 0.8);
 }
 
-.slider-affiches-ml {
-    /* set initial width */
-    width: 300px;
-    
-    /* hide the content that overflows (to allow second box to show through) */
-    overflow: hidden;
-    display: inline-block;
-    
-    /* skew container so that it has angled edge, and set up transition */
-    transform: skewX(-20deg);
-    transition: width 1.2s ease-in-out;
-    
-    margin-left: -76px;
-           
-    /* hide pointer events for unseen content */
-    pointer-events: none;
-    position: absolute;
-    z-index: 3;
+.affiche-container:hover .affiche-verso {
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay
+				       so the menu will be visible while
+				       the other styles transition */
 }
 
+.affiche-marseille-container .affiche-verso div.text-center { transform: skewX(-5deg); }
+.affiche-lyon-container .affiche-verso div.text-center { transform: skewX(4deg); }
 
+.affiche-paris-container:hover .affiche-verso { z-index: 2; }
+.affiche-marseille-container:hover .affiche-verso { z-index: 4; }
+.affiche-lyon-container:hover .affiche-verso { z-index: 6; }
 
-/* make first box bigger on hover, and smaller when hover second box */
-.slider-affiches-pm:hover {
-    width: 750px;
+div.affiches { clear: both; }
+div.affiches .text-center {
+    clear: both;
+    color: #999;
+    font-size: 2.5vw;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin : 1em 0;
 }
-        
-.affiche-paris:hover + slider-affiches-pm {
-    width: 250px;
+div.affiches .text-center a.theatre {
+    font-size: 120%;
+    text-decoration: none;
 }
-
-.slider-affiches-pm:hover + slider-affiches-ml {
-    width: 250px;
+div.affiches .affiche-paris-container .text-center .theatre a {
+    color: rgba(190, 136, 65, 1);
+}
+div.affiches .affiche-marseille-container .text-center .theatre a {
+    color: rgba(153, 102, 116, 1);
+}
+div.affiches .affiche-lyon-container .text-center .theatre a {
+    color: rgba(64, 168, 191, 1);
+}
+div.affiches .text-center .plusdinfos {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+div.affiches .text-center .plusdinfos a {
+    color: #999;
+}
+div.affiches .text-center h1 {
+    font-size: 200%;
+    color: white;
+}
+div.affiches .text-center h3 {
+    font-size: 100%;
+}
+div.affiches .text-center h4 {
+    font-size: 75%;
+}
+div.affiches a.btn-primary {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  font-size: 75%;
+  color:white;
+}
+div.affiches .affiche-paris-container .text-center a.btn-primary {
+    background-color: rgba(190, 136, 65, 1);
+    border-color: rgba(190, 136, 65, 1);
+}
+div.affiches .affiche-marseille-container .text-center a.btn-primary {
+    background-color: rgba(153, 102, 116, 1);
+    border-color: rgba(153, 102, 116, 1);
+}
+div.affiches .affiche-lyon-container .text-center a.btn-primary {
+    background-color: rgba(64, 168, 191, 1);
+    border-color: rgba(64, 168, 191, 1);
+}
+div.affiches .btn-group {
+  margin-top: 0.5em;
+}
+div.affiches .btn-primary:hover {
+  background-color: #16a085;
+  border-color: #16a085;
 }

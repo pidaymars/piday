@@ -2,12 +2,25 @@
 layout: frontpage
 ---
 <script>
+  
   function scroll_to_menu() {  
-    $('html,body').animate({scrollTop: $('.haut-menu').offset().top},'slow');
+    $('html,body').animate({scrollTop: $('.section-affiches').offset().top},'slow');
     $(window).off('scroll');
     $('.navbar').slideDown("slow");
+    $(".affiche-paris-container").trigger("mouseenter");
   }
   $(window).on('scroll', scroll_to_menu);
+
+  /* Sur mobile, la barre d'adresse apparait et disparait, ce qui change la valeur de vh
+  et provoque des sauts dans l'affichage lorsque le poster est redimensionné. Le hack immonde
+  qui suit "corrige" le problème. Le canard en plastique me jugera.
+  Guillaume */
+  $(document).ready(function() {
+    if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
+      $('.frontpage-poster').css("height",$('.frontpage-poster').height()+"px");
+  console.log($('.frontpage-poster').css("height"));
+    }
+  });
 </script>
 
 <div class="frontpage-poster" onclick="scroll_to_menu()"></div>
@@ -61,36 +74,99 @@ layout: frontpage
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class="container row text-center center section-affiches">
+  <div class="col-sm-12" style="padding:3em; width:100vw"> <!-- :-/ -->
+    <div class="catchphrase text-center">
+      <p>
+	  La journée de π part en tournée ! Coup d'envoi le 14 mars 2017 pour la cinquième édition de la <a href="{{ '/Concept/' | prepend: site.baseurl }}">journée de π</a>.
+	</p>
+      </div>
+  </div>
 
-<div class="container row center haut-menu">
-<div class="col-sm-12">
-  <h1>Lorem ipsum</h1>
-  <span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</span>
-</div>  
+  <div class="affiches">
+    <!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) -->
+    <div class="box affiche-marseille-container affiche-container">
+      <figure>
+	<div class="box affiche-marseille affiche-recto"></div>
+	<figcaption class="affiche-verso">
+	  <div class="text-center">
+            <h1>Marseille</h1>
+            <h3>jeudi 16 mars</h3>
+            <h4 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h4>
+	    <h4 class="theatre">20h</h4>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	    <div class="btn-group">
+	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		pré-réservation
+	      </a>
+	    </div>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+    <div class="box affiche-paris-container affiche-container">
+      <figure>
+	<div class="box affiche-paris affiche-recto"></div>
+	<figcaption class="affiche-verso">
+	  <div class="text-center">
+	    <h1>Paris</h1>
+            <h3>mardi 14 mars</h3>
+            <h4 class="theatre"><a href="http://www.theatre-des-varietes.fr">Théâtre des Variétés</a></h4>
+	    <h4 class="theatre">20h</h4>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	    <div class="btn-group">
+	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		pré-réservation
+	      </a>
+	    </div>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+    <div class="box affiche-lyon-container affiche-container">
+      <figure>
+	<div class="box affiche-lyon affiche-recto"></div>
+	<figcaption class="affiche-verso">
+	  <div class="text-center">
+            <h1>Lyon</h1>
+            <h3>dimanche 19 mars</h3>
+            <h4 class="theatre"><a href="http://www.transbordeur.fr">Le Transbordeur</a></h4>
+	    <h4 class="theatre">18h</h4>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	    <div class="btn-group">
+	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		pré-réservation
+	      </a>
+	    </div>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+  </div>
 </div>
 
-<div class="box" style="width: 98vw; height:110vw; overflow: hidden; position: relative;">
-  <div class="box affiche-marseille-container">
-    <div class="box affiche-marseille"></div>
+<!--  <div class="affiches">
+    <!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) ->
+    <div class="box affiche-marseille-container">
+      <figure>
+	<div class="box affiche-marseille affiche-recto"></div>
+	<figcaption class="affiche-verso"><p>AAA</p>
+	</figcaption>
+      </figure>
+    </div>
+    <div class="box affiche-paris-container">
+      <figure>
+	<div class="box affiche-paris  affiche-recto"></div>
+	<figcaption class="affiche-verso">AAA
+	</figcaption>
+      </figure>
+    </div>
+    <div class="box affiche-lyon-container">
+      <figure>
+	<div class="box affiche-lyon affiche-recto"></div>
+	<figcaption class="affiche-verso">AAA
+	</figcaption>
+      </figure>
+    </div>
   </div>
-  <div class="box affiche-lyon-container">
-    <div class="box affiche-lyon"></div>
-  </div>
-  <div class="box affiche-paris-container">
-    <div class="box affiche-paris"></div>
-  </div>
-</div>
-<!--
-<div class="box affiche-paris"></div>
-<div class="slider slider-affiches-pm">
-    <div class="box affiche-marseille"></div>
-</div>
-<div class="slider slider-affiches-ml">
-  <div class="box affiche-lyon"></div>
-</div>
--->
-<!--
-<div class="slider slider-affiches-ml">
-      <div class="box affiche-lyon"></div>
-</div>
--->
+</div> -->
