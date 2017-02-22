@@ -8,11 +8,6 @@ div.frontpage-poster {
     height: 100vh;
 }
 
-div.section-affiches {
-    padding-top: 3em;
-}
-
-
 nav.frontpage {
     overflow-y:hidden;
     display: none;
@@ -126,7 +121,7 @@ nav.frontpage {
 .affiche-marseille-container:hover .affiche-verso, .affiche-hoover  { z-index: 4; }
 .affiche-lyon-container:hover .affiche-verso, .affiche-hoover { z-index: 6; }
 
-div.affiches { clear: both; }
+div.affiches { clear: both; height: 44.17vw; }
 div.affiches .text-center {
     clear: both;
     color: #999;
@@ -148,9 +143,14 @@ div.affiches .affiche-marseille-container .text-center .theatre a {
 div.affiches .affiche-lyon-container .text-center .theatre a {
     color: rgba(64, 168, 191, 1);
 }
+div.affiches .text-center .cestgratuit {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    color: white;
+}
 div.affiches .text-center .plusdinfos {
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
+    margin-top: 1em;
+    visibility: hidden;
 }
 div.affiches .text-center .plusdinfos a {
     color: #999;
@@ -189,4 +189,46 @@ div.affiches .btn-group {
 div.affiches .btn-primary:hover {
   background-color: #16a085;
   border-color: #16a085;
+}
+
+
+
+
+
+div.section-accroche h1 {
+  color: rgba(117, 10, 24, 1);
+}
+
+
+
+
+
+
+div.section-partenaires {
+    padding-top: 5em;
+}
+.thumbnail-partenaires {
+  display: block;
+  margin-bottom: 20px;
+  height: 220px;
+  text-align: center;
+  /* écrasement du style préexistant */
+  background-color: transparent;
+  border : 0;
+}
+.thumbnail-partenaires>img, .thumbnail-partenaires a>img {
+  display: block;
+  max-height:120px;
+  max-width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.thumbnail-partenaires h2 {
+  background: rgba(0, 0, 0, .4);
+  display: inline-block;
+  padding: 0.2em;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 2em;
 }

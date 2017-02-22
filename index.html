@@ -4,16 +4,17 @@ layout: frontpage
 <script>
   
   function scroll_to_menu() {  
-    $('html,body').animate({scrollTop: $('.section-affiches').offset().top},'slow');
+    $('html,body').animate({scrollTop: $('.section-affiches').offset().top
+                                     - $('.navbar').height() },'slow');
     $(window).off('scroll');
     $('.navbar').slideDown("slow");
 
     window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").addClass('affiche-hoover');},500);
-    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},2000);
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},3000);
     window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").addClass('affiche-hoover');},700);
-    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},2200);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},3200);
     window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").addClass('affiche-hoover');},900);
-    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},2400);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},3400);
   }
   $(window).on('scroll', scroll_to_menu);
 
@@ -30,65 +31,8 @@ layout: frontpage
 </script>
 
 <div class="frontpage-poster" onclick="scroll_to_menu()"></div>
-   
-<nav class="navbar navbar-default navbar-fixed-top navbar-transparent frontpage" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Menu</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ site.baseurl }}/">
-        PI DAY - La tournée de Pi 
-      </a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <!-- <ul class="nav navbar-nav">
-           <li class="active"><a href="#">Link</a></li>
-           <li><a href="#">Link</a></li>
-      </ul> -->
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a class="page-link" href="{{ site.baseurl }}/">Home</a>
-        </li>        <li>
-          <a href="http://youtu.be/1DOI-a-1_4o?list=PLHn5WCTrhnZVDscCsuEZPA0rHt6IYXEbk" class="page-link">Vidéos</a>
-        </li>
-        <li>
-          <a href="{{ '/Concept/' | prepend: site.baseurl }}" class="page-link">Concept</a>
-        </li>
-        <li>
-          <a href="{{ '/2016/' | prepend: site.baseurl }}" class="page-link">2016</a>
-        </li>
-        <li>
-          <a href="{{ '/Tartes/' | prepend: site.baseurl }}" class="page-link">Tartes</a>
-        </li>
-        <li>
-          <a class="page-link" href="{{ '/Archives/' | prepend: site.baseurl }}">Archives</a>
-        </li>
-        <li>
-          <a class="page-link" href="{{ '/Partenaires/' | prepend: site.baseurl }}">Partenaires</a>
-        </li>
-	<li>
-          <a class="page-link" href="{{ '/Presse/' | prepend: site.baseurl }}">Presse</a>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
 <div class="container row text-center center section-affiches">
-  <div class="col-sm-12" style="padding:4em; width:100vw"> <!-- :-/ -->
-    <div class="catchphrase text-center">
-      <p>
-	  La journée de π part en tournée ! Coup d'envoi le 14 mars 2017 pour la cinquième édition de la <a href="{{ '/Concept/' | prepend: site.baseurl }}">journée de π</a>.
-	</p>
-      </div>
-  </div>
-
   <div class="affiches">
     <!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) -->
     <div class="box affiche-marseille-container affiche-container">
@@ -100,12 +44,13 @@ layout: frontpage
             <h3>jeudi 16 mars</h3>
             <h4 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h4>
 	    <h4 class="theatre">20h</h4>
-	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 	    <div class="btn-group">
 	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
 		pré-réservation
 	      </a>
 	    </div>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
 	  </div>
 	</figcaption>
       </figure>
@@ -119,12 +64,13 @@ layout: frontpage
             <h3>mardi 14 mars</h3>
             <h4 class="theatre"><a href="http://www.theatre-des-varietes.fr">Théâtre des Variétés</a></h4>
 	    <h4 class="theatre">20h</h4>
-	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 	    <div class="btn-group">
 	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
 		pré-réservation
 	      </a>
 	    </div>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
 	  </div>
 	</figcaption>
       </figure>
@@ -138,15 +84,67 @@ layout: frontpage
             <h3>dimanche 19 mars</h3>
             <h4 class="theatre"><a href="http://www.transbordeur.fr">Le Transbordeur</a></h4>
 	    <h4 class="theatre">18h</h4>
-	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 	    <div class="btn-group">
 	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
 		pré-réservation
 	      </a>
 	    </div>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
 	  </div>
 	</figcaption>
       </figure>
     </div>
+  </div>
+</div>
+
+<div class="section-accroche">
+  <div class="col-sm-12" style="padding:4em; width:100vw"> <!-- :-/ -->
+    <div class="catchphrase text-center">
+      <p>La journée de π part en tournée ! Coup d'envoi le 14 mars 2017 pour la cinquième édition de la <a href="{{ '/Concept/' | prepend: site.baseurl }}">journée de π</a>.</p>
+      <p>Découvrez la première comédie musicale mathématique <em>made in Marseille<em>&nbsp;:</em></p>
+      <p><h1>From Marseille to Vegas</h1></p>
+      </div>
+  </div>
+</div>
+
+<div class="section-partenaires">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-12">
+	<div class="catchphrase,">
+	  <h4>La <em>Tournée de π</em> est organisée par l'association Pi Day,
+	    avec le soutien de la <a href="http://fondation.univ-amu.fr">Fondation Aix-Marseille Université</a>
+	    et de nombreaux autres partenaires que nous <strong>remercions</strong> !</h4>
+	</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 1.5cm">
+      {% for partenaire in site.data.partenaires %}
+      <div class="col-sm-3">
+	<div class="thumbnail thumbnail-partenaires">
+	  <a href="{{ partenaire.website }}">
+	    <img src="{{ "/images/logo-partenaire/" | prepend: site.baseurl | append: partenaire.filename }}" alt="{{ partenaire.acronym }}">
+	  </a>
+	  <div class="caption">
+	    <p><a href="{{ partenaire.website }}">{{ partenaire.name }}</a></p>
+	  </div>
+	</div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div>
+      <h4>avec le parrainage de  la </h4>
+      <div class="thumbnail thumbnail-partenaires">
+	<img src="{{ '/images/logo-partenaire/smf.png' | prepend: site.baseurl }}">
+	<div class="caption">
+	  <p><a href="http://smf.emath.fr/">Société Mathématique de France</a></p>
+	</div>
+      </div>
+    </div>
+    <div class="row text-center">
+    </div>
+    <div class="row" style="margin-top: 1.5cm"></div>
   </div>
 </div>
