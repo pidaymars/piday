@@ -1,5 +1,5 @@
 div.frontpage-poster {
-    background: url('/images/poster-front-page.jpg') no-repeat top center fixed; 
+    background: url('/images/poster-front-page.jpg') no-repeat top center; 
      -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -113,7 +113,6 @@ nav.frontpage {
 				       so the menu will be visible while
 				       the other styles transition */
 }
-
 .affiche-marseille-container .affiche-verso div.text-center { transform: skewX(-5deg); }
 .affiche-lyon-container .affiche-verso div.text-center { transform: skewX(4deg); }
 
@@ -172,16 +171,19 @@ div.affiches a.btn-primary {
   color:white;
 }
 div.affiches .affiche-paris-container .text-center a.btn-primary {
-    background-color: rgba(190, 136, 65, 1);
-    border-color: rgba(190, 136, 65, 1);
+    background-color: hsla(34, 49%, 50%, 1);
+    border-color: hsla(34, 49%, 50%, 1);
+    background-image: linear-gradient(hsla(34, 49%, 55%, 1), hsla(34, 49%, 45%, 1));
 }
 div.affiches .affiche-marseille-container .text-center a.btn-primary {
-    background-color: rgba(153, 102, 116, 1);
-    border-color: rgba(153, 102, 116, 1);
+    background-color: hsla(344, 20%, 50%, 1);
+    border-color: hsla(344, 20%, 50%, 1);
+    background-image: linear-gradient(hsla(344, 20%, 55%, 1), hsla(344, 20%, 45%, 1));
 }
 div.affiches .affiche-lyon-container .text-center a.btn-primary {
-    background-color: rgba(64, 168, 191, 1);
-    border-color: rgba(64, 168, 191, 1);
+    background-color: hsla(191, 50%, 50%, 1);
+    border-color: hsla(191, 50%, 50%, 1);
+    background-image: linear-gradient(hsla(191, 50%, 55%, 1), hsla(191, 50%, 45%, 1));
 }
 div.affiches .btn-group {
   margin-top: 0.5em;
@@ -190,19 +192,86 @@ div.affiches .btn-primary:hover {
   background-color: #16a085;
   border-color: #16a085;
 }
+.btn-primary {
+  border-radius: .2em;
+}
 
 
 
 
-
-div.section-accroche h1 {
+div.section-accroche {
+    margin-top: 1em;
+}
+div.section-accroche .titre-comedie {
+    background-image: url('/images/titre-comedie.png');
+    background-image: url('/images/titre-comedie.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    height: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+div.section-accroche .description-comedie {
   color: rgba(117, 10, 24, 1);
+  font-style: italic;
+  font-size: 75%;
+  margin-bottom: 2em;
+}
+div.section-accroche .affiches {
+    margin-top: 2em;
+    margin-bottom: 1em;
+ }
+.affiche-verso-fixe {
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s, 0s; /* this removes the transition delay
+				       so the menu will be visible while
+				       the other styles transition */
+}
+.affiche-paris-container .affiche-verso-fixe {
+    display: block;
+    background-color: rgba(13, 24, 38, 1);
+}
+.affiche-marseille-container .affiche-verso-fixe {
+    display: block;
+    background-color: rgba(8, 43, 33, 1);
+}
+.affiche-lyon-container .affiche-verso-fixe {
+    display: block;
+    background-color: rgba(38, 26, 13, 1);
+}
+
+
+
+
+.section-crowdfunding {
+    clear: both;
+}
+.embed-responsive.embedded-youtube{
+    width: 569px;
+    height:320px;
+    padding:0;
+    margin-bottom: 3em;
 }
 
 
 
 
 
+
+
+
+
+div.section-association {
+    overflow: hidden;
+    background-color: black;
+    margin-top: 2em;
+}
+div.section-association .catchphrase {
+    color: #AAA;
+}
 
 div.section-partenaires {
     padding-top: 5em;
@@ -232,3 +301,4 @@ div.section-partenaires {
   letter-spacing: 2px;
   margin-bottom: 2em;
 }
+

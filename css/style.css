@@ -14,3 +14,28 @@ html, body {
   letter-spacing: 3px;
   margin : 1em 0;
 }
+.catchphrase h4 {
+  font-size: 18px;
+}
+
+/* Footer */
+
+#footer {
+  background-color: #222;
+  color: #aaaaaa;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#footer a {
+  color: #cccccc;
+}
+#footer a:hover {
+  color: white;
+}
+.social a {
+  font-size: 24px;
+}
+.social a:hover {
+  text-decoration: none;
+}

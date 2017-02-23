@@ -1,0 +1,36 @@
+{% if page.layout == 'frontpage' %}
+<nav class="navbar navbar-default navbar-fixed-top navbar-transparent frontpage" role="navigation">
+{% else %}
+<nav class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
+{% endif %}
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        PI DAY - La tournée de Pi 
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav">
+           <li class="active"><a href="#">Link</a></li>
+           <li><a href="#">Link</a></li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="page-link" onclick="scroll_to_section_affiches()" href="#">La tournée</a></li>
+        <li><a class="page-link" onclick="scroll_to_section_accroche()" href="#">Le spectacle</a></li>
+        <li><a class="page-link" onclick="scroll_to_section_reservations()" href="#">Réservations</a></li>
+        <li><a class="page-link" onclick="scroll_to_section_crowdfunding()" href="#">Soutenez-nous</a></li>
+	<li><a class="page-link" onclick="scroll_to_section_association()" href="#">Qui sommes-nous&nbsp;?</a></li>	
+	<li><a class="page-link" onclick="scroll_to_section_partenaires()" href="#">Nos partenaires</a></li>
+	<li><a class="page-link" href="http://youtu.be/1DOI-a-1_4o?list=PLHn5WCTrhnZVDscCsuEZPA0rHt6IYXEbk" target="_blank">Vidéos</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
