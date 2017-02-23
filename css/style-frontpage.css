@@ -155,6 +155,7 @@ div.affiches .text-center .plusdinfos a {
     color: #999;
 }
 div.affiches .text-center h1 {
+    font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
     font-size: 200%;
     color: white;
 }
@@ -212,6 +213,7 @@ div.section-accroche .titre-comedie {
     margin-top: 2em;
     margin-bottom: 1em;
 }
+div.section-accroche p { margin-top: 1em; }
 div.section-accroche .description-comedie {
   color: rgba(117, 10, 24, 1);
   font-style: italic;

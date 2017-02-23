@@ -1,8 +1,9 @@
-html
+html, body
 {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	background-color: hsla(0, 0%, 40%, 1);
 }
 
 .frontpage-mobile-poster {
@@ -143,7 +144,7 @@ a {
 
 .version-desktop {
     width: 100vw;
-    height: 5vh;
+    height: 6h;
 	top: 95vh;
     z-index: 7;
     background-color: hsla(0, 0%, 40%, 1);

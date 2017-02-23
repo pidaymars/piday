@@ -2,26 +2,21 @@
 
   function first_scroll() {
     $(window).off('scroll');
-    /*$('.section-affiches').css("margin-top",$('.navbar').height()+"px");*/
     $('.navbar').slideDown("slow");
-/*	window.setTimeout(function() {$('.frontpage-poster').hide();}, 3400); */
-/*	$('.frontpage-poster').slideUp("fast"); %/
-    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").addClass('affiche-hoover');},500);
-    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},3000);
-    /*window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").addClass('affiche-hoover');},700);
-    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},3200);
-    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").addClass('affiche-hoover');},900);
-    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},3400); */
-	scroll_to_section_affiches();
+    $('.section-affiches').css("margin-top",$('.navbar').height()+"px");
+	$("*").stop(true,true);
+	$(".frontpage-poster").slideUp("slow");
+	window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 2});},500);
+	window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 4});},700);
+	window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 6});},900);
+	window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "",'visibility': "",'opacity': "", 'transition-delay': "", 'z-index' : ""});},3000);
+	window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "",'visibility': "",'opacity': "", 'transition-delay': "", 'z-index': ""});},3200);
+	window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "",'visibility': "",'opacity': "", 'transition-delay': "", 'z-index': ""});},3400);
   }
 
   function scroll_to_section_affiches() {
 	  $('html,body').animate({scrollTop: $('.section-affiches').offset().top - $('.navbar').height() },
   	{ duration: "slow", complete : function() {
-    	$('.section-affiches').css("margin-top",$('.navbar').height()+"px");
-        $(".frontpage-poster").hide();
-	    $('html,body').animate({scrollTop: $('.section-affiches').offset().top - $('.navbar').height() }, "fast");
-	    $("*").stop(true,true);
 		window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 2});},500);
 		window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 4});},700);
 		window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 6});},900);
@@ -78,7 +73,7 @@
 	    <h4 class="theatre">20h</h4>
 	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 	    <div class="btn-group">
-	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+	      <a class="btn btn-primary btn-sm" href="https://www.eventbrite.fr/e/billets-tournee-de-pi-marseille-comedie-musicale-mathematique-32258079785">
 		pré-réservation
 	      </a>
 	    </div>
@@ -98,7 +93,7 @@
 	    <h4 class="theatre">20h</h4>
 	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 	    <div class="btn-group">
-	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+	      <a class="btn btn-primary btn-sm" href="https://www.eventbrite.fr/e/billets-tournee-de-pi-paris-comedie-musicale-mathematique-32256626438">
 		pré-réservation
 	      </a>
 	    </div>
@@ -118,7 +113,7 @@
 	    <h4 class="theatre">18h</h4>
 	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 	    <div class="btn-group">
-	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+	      <a class="btn btn-primary btn-sm" href="https://www.eventbrite.fr/e/billets-tournee-de-pi-lyon-comedie-musicale-mathematique-32258333544">
 		pré-réservation
 	      </a>
 	    </div>
@@ -141,28 +136,27 @@
 	lassés du turbin de la thèse...</div>
       <p>Entrée gratuite pour tous, réservez dès à présent vos places&nbsp;:</p>
 
-      <div class="affiches">
-	<!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) -->
+    <div class="affiches">
 	<div class="box affiche-marseille-container affiche-container">
 	  <figure>
 	    <figcaption class="affiche-verso affiche-verso-fixe">
 	      <div class="text-center">
-		<h1>Marseille</h1>
-		<h3>jeudi 16 mars</h3>
-		<h4 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h4>
-		<h4 class="theatre">20h</h4>
-		<h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
-		<div class="btn-group">
-		  <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
-		    pré-réservation
-		  </a>
-		</div>
-		<h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+		    <h1>Marseille</h1>
+            <h3>jeudi 16 mars</h3>
+            <h4 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h4>
+            <h4 class="theatre">20h</h4>
+            <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+            <div class="btn-group">
+              <a class="btn btn-primary btn-sm" href="https://www.eventbrite.fr/e/billets-tournee-de-pi-marseille-comedie-musicale-mathematique-32258079785">
+                pré-réservation
+              </a>
+            </div>
+            <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
 	      </div>
 	    </figcaption>
 	  </figure>
 	</div>
-	<div class="box affiche-paris-container">
+	<div class="box affiche-paris-container affiche-container">
 	  <figure>
 	    <figcaption class="affiche-verso affiche-verso-fixe">
 	      <div class="text-center">
@@ -172,7 +166,7 @@
 		<h4 class="theatre">20h</h4>
 		<h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 		<div class="btn-group">
-		  <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		  <a class="btn btn-primary btn-sm" href="https://www.eventbrite.fr/e/billets-tournee-de-pi-paris-comedie-musicale-mathematique-32256626438">
 		    pré-réservation
 		  </a>
 		</div>
@@ -191,7 +185,7 @@
 		<h4 class="theatre">18h</h4>
 		<h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
 		<div class="btn-group">
-		  <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		  <a class="btn btn-primary btn-sm" href="https://www.eventbrite.fr/e/billets-tournee-de-pi-lyon-comedie-musicale-mathematique-32258333544">
 		    pré-réservation
 		  </a>
 		</div>
@@ -200,9 +194,12 @@
 	    </figcaption>
 	  </figure>
 	</div>
+	
+	
       </div>
       
     </div>
+	
   </div>
 </div>
 
