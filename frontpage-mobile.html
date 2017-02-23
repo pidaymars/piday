@@ -1,0 +1,86 @@
+---
+layout: frontpage-mobile
+permalink: /mobile/
+---
+<script>
+  function hide_poster() {
+    $(".frontpage-mobile-poster").css({ opacity: 0, transition: 'opacity 1s' }).slideUp('slow');
+  }
+  $(document).ready(function() {window.setTimeout(hide_poster,2000);});
+</script>
+  
+<div class="frontpage-mobile-poster" onclick="hide_poster()"></div>
+
+<div class="box section-reservation">
+
+  <div class="accroche">
+	<div class="text-center">
+		<h2><strong>Tournée de π</strong><br>
+			spectacle musical mathématique<br>
+			<strong>gratuit pour tous&nbsp;!</strong></h2>
+	</div>
+  </div>
+  
+	<div class="box reservation-exterieur reservation-exterieur-paris">
+	  <div class="box reservation-interieur reservation-interieur-paris">
+	    <div class="text-center">
+  		  <h1>Paris</h1>
+		  <h2>mardi 14 mars &mdash; 20h</h3>
+		  <h2 class="theatre"><a href="http://www.theatre-des-varietes.fr">Théâtre des Variétés</a></h2>
+		  <div class="btn-group">
+		    <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		      pré-réservation
+		    </a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="box reservation-exterieur reservation-exterieur-marseille">
+	  <div class="box reservation-interieur reservation-interieur-marseille">
+	    <div class="text-center">
+		  <h1>Marseille</h1>
+		  <h2>jeudi 16 mars &mdash; 20h</h2>
+		  <h2 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h2>
+		  <div class="btn-group">
+		    <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		      pré-réservation
+		    </a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="box reservation-exterieur reservation-exterieur-lyon">
+	  <div class="box reservation-interieur reservation-interieur-lyon">
+	    <div class="text-center">
+		  <h1>Lyon</h1>
+		  <h2>dimanche 19 mars &mdash; 18h</h2>
+		  <h2 class="theatre"><a href="http://www.transbordeur.fr">Le Transbordeur</a></h2>
+		  <div class="btn-group">
+		    <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		      pré-réservation
+		    </a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+    <div class="version-desktop">
+  	<div class="row">
+		<div class="col-xs-6">
+		  <div class="text-left">
+  		    en savoir plus
+	     </div>
+	    </div>
+		<a href="/desktop/">
+		  <div class="col-xs-6">
+		    <div class="text-right">
+  			  version desktop
+	        </div>
+	      </div>
+		</div>
+  	</div>
+    </div>
+	
+</div>

@@ -1,0 +1,291 @@
+<script>
+  function first_scroll() {
+    $('.frontpage-poster').css("height",$('.frontpage-poster').height()+"px");
+    $('.section-affiches').css("margin-top",$('.navbar').height()+"px");
+    $('.frontpage-poster').slideUp("slow");
+    $(window).off('scroll');
+    $('.navbar').slideDown("slow");
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").addClass('affiche-hoover');},500);
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},3000);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").addClass('affiche-hoover');},700);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},3200);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").addClass('affiche-hoover');},900);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},3400); 
+  }
+  $(window).on('scroll', first_scroll);
+
+  function scroll_to_section_affiches() {  
+    $('html,body').animate({scrollTop: $('.section-affiches').offset().top
+                                     - $('.navbar').height() },'slow');
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").addClass('affiche-hoover');},500);
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},3000);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").addClass('affiche-hoover');},700);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},3200);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").addClass('affiche-hoover');},900);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},3400); 
+  }
+
+  function scroll_to_section_accroche() {  
+    $('html,body').animate({scrollTop: $('.section-accroche').offset().top
+                                     - $('.navbar').height() },'slow');
+  }
+  function scroll_to_section_reservations() {  
+    $('html,body').animate({scrollTop: $('.section-accroche .affiches').offset().top
+                                     - $('.navbar').height() },'slow');
+  }
+  function scroll_to_section_crowdfunding() {  
+    $('html,body').animate({scrollTop: $('.section-crowdfunding').offset().top
+                                     - $('.navbar').height() },'slow');
+  }
+  function scroll_to_section_association() {  
+    $('html,body').animate({scrollTop: $('.section-association').offset().top
+                                     - $('.navbar').height() },'slow');
+  }
+  function scroll_to_section_partenaires() {  
+    $('html,body').animate({scrollTop: $('.section-partenaires').offset().top
+                                     - $('.navbar').height() },'slow');
+  }
+
+  {% if page.device == "unknown" %}
+  if (window.matchMedia("(orientation:portrait)").match ||
+	(/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) 	{
+	    window.location = "/mobile/";
+    }
+  {% endif %}
+</script>
+
+<div class="frontpage-poster" onclick="first_scroll()"></div>
+
+<div class="container row text-center center section-affiches">
+  <div class="affiches">
+    <!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) -->
+    <div class="box affiche-marseille-container affiche-container">
+      <figure>
+	<div class="box affiche-marseille affiche-recto"></div>
+	<figcaption class="affiche-verso">
+	  <div class="text-center">
+            <h1>Marseille</h1>
+            <h3>jeudi 16 mars</h3>
+            <h4 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h4>
+	    <h4 class="theatre">20h</h4>
+	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+	    <div class="btn-group">
+	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		pré-réservation
+	      </a>
+	    </div>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+    <div class="box affiche-paris-container affiche-container">
+      <figure>
+	<div class="box affiche-paris affiche-recto"></div>
+	<figcaption class="affiche-verso">
+	  <div class="text-center">
+	    <h1>Paris</h1>
+            <h3>mardi 14 mars</h3>
+            <h4 class="theatre"><a href="http://www.theatre-des-varietes.fr">Théâtre des Variétés</a></h4>
+	    <h4 class="theatre">20h</h4>
+	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+	    <div class="btn-group">
+	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		pré-réservation
+	      </a>
+	    </div>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+    <div class="box affiche-lyon-container affiche-container">
+      <figure>
+	<div class="box affiche-lyon affiche-recto"></div>
+	<figcaption class="affiche-verso">
+	  <div class="text-center">
+            <h1>Lyon</h1>
+            <h3>dimanche 19 mars</h3>
+            <h4 class="theatre"><a href="http://www.transbordeur.fr">Le Transbordeur</a></h4>
+	    <h4 class="theatre">18h</h4>
+	    <h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+	    <div class="btn-group">
+	      <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		pré-réservation
+	      </a>
+	    </div>
+	    <h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	  </div>
+	</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<div class="section-accroche">
+  <div class="col-sm-12" style="padding-left:4em; padding-right: 4em; "> <!-- :-/ -->
+    <div class="catchphrase text-center">
+      <p>Voyage en musique au pays du hasard et des mathématiques&nbsp;: du 14 au 19 mars, l'<strong><a href="#" onclick="scroll_to_section_association()">association Pi Day</a></strong> vous invite à Paris, Marseille et Lyon pour partager la plus irrationnelle des soirées musicales&nbsp;!</p>
+      <p>Au programme, sciences, musique et spectacle, avec des mini-conférences vivantes et pleines d'énergie, et la première <strong>comédie musicale mathématique</strong> <em>made in Marseille</em>&nbsp;:</p>
+      <div class="titre-comedie" alt="From Marseille to Vegas"></div>
+      <div class="description-comedie">Peut-on se jouer du hasard ? Avec les mathématiques peut-être !
+	En tous cas c'est le pari fou d'un groupe de quatre jeunes étudiants désabusés,
+	lassés du turbin de la thèse...</div>
+      <p>Entrée gratuite pour tous, réservez dès à présent vos places&nbsp;:</p>
+
+      <div class="affiches">
+	<!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) -->
+	<div class="box affiche-marseille-container affiche-container">
+	  <figure>
+	    <figcaption class="affiche-verso affiche-verso-fixe">
+	      <div class="text-center">
+		<h1>Marseille</h1>
+		<h3>jeudi 16 mars</h3>
+		<h4 class="theatre"><a href="http://www.silo-marseille.fr">Le Silo</a></h4>
+		<h4 class="theatre">20h</h4>
+		<h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+		<div class="btn-group">
+		  <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		    pré-réservation
+		  </a>
+		</div>
+		<h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	      </div>
+	    </figcaption>
+	  </figure>
+	</div>
+	<div class="box affiche-paris-container">
+	  <figure>
+	    <figcaption class="affiche-verso affiche-verso-fixe">
+	      <div class="text-center">
+		<h1>Paris</h1>
+		<h3>mardi 14 mars</h3>
+		<h4 class="theatre"><a href="http://www.theatre-des-varietes.fr">Théâtre des Variétés</a></h4>
+		<h4 class="theatre">20h</h4>
+		<h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+		<div class="btn-group">
+		  <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		    pré-réservation
+		  </a>
+		</div>
+		<h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	      </div>
+	    </figcaption>
+	  </figure>
+	</div>
+	<div class="box affiche-lyon-container affiche-container">
+	  <figure>
+	    <figcaption class="affiche-verso affiche-verso-fixe">
+	      <div class="text-center">
+		<h1>Lyon</h1>
+		<h3>dimanche 19 mars</h3>
+		<h4 class="theatre"><a href="http://www.transbordeur.fr">Le Transbordeur</a></h4>
+		<h4 class="theatre">18h</h4>
+		<h4 class="cestgratuit">entrée gratuite&nbsp;!</h4>
+		<div class="btn-group">
+		  <a class="btn btn-primary btn-sm" href="http://piday2016.eventbrite.fr">
+		    pré-réservation
+		  </a>
+		</div>
+		<h4 class="plusdinfos"><a href=".">plus d'infos...</a></h4>
+	      </div>
+	    </figcaption>
+	  </figure>
+	</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="section-crowdfunding">
+  <div class="row">
+    <div class="col-sm-12" style="padding-left:4em; padding-right:4em;"> <!-- :-/ -->
+      <div class="catchphrase text-center">
+	<h3>
+	  <p>La tournée de Pi a aussi besoin de vous&nbsp;! Pour nous permettre de réaliser les vidéos du spectacle, soutenez-nous à travers notre <a href="https://www.indiegogo.com/projects/tournee-de-pi-science-musical#/">campagne de crowdfunding</a>&nbsp;!</p>
+	</h3>
+      </div>
+    </div>
+    <div style="margin-top: 18pt;">
+      <div class="embed-responsive embed-responsive-16by9 center-block embedded-youtube">
+	<iframe class="embed-responsive-item" style="max-width:569px; max-height:320px;" src="https://www.youtube.com/embed/Ohfk8ian6ms"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section-association" style="padding: 2em;">
+  <div class="row text-left catchphrase">
+    <div class="col-sm-12">
+      <img src="/images/logo-geometrique.png" class="pull-left gap-right" style="width:10em; margin-right:1em;">
+      <h4>
+      <p>Nous sommes une association composée de doctorants et jeunes chercheurs en mathématiques de Lyon, Marseille et Paris, rassemblés autour d'un grand projet de partage des mathématiques. Nous organisons depuis 2013 de nombreux événements de diffusion scientifique grand public à titre bénévole, dont la Journée de π tous les 14 mars (qui devient cette année la Tournée de π)&nbsp;! </p>
+      
+      <p>Pour l’originalité, l’ampleur et la réussite de ses activités, l’association a reçu en 2016 le <a href="http://http://smf.emath.fr/content/prix-dalembert">Prix d’Alembert</a> de la Société de Mathématiques de France (SMF), récompensant les initiatives de diffusion mathématique auprès du grand public.</p>
+
+      <p>Revivez en vidéo les moments forts du spectacle du pi day 2016 au Théatre national de la Criée&nbsp;!</p>
+
+      <div class="embed-responsive embed-responsive-16by9 center-block embedded-youtube"
+	   style="margin-top: 2em; margin-bottom: 2em">
+	<iframe class="embed-responsive-item" style="max-width:569px; max-height:320px;" src="https://www.youtube.com/embed/1DOI-a-1_4o?list=PLHn5WCTrhnZVDscCsuEZPA0rHt6IYXEbk"></iframe>
+      </div>
+
+      <p>Suivez-nous sur
+        <a href="https://www.facebook.com/pidaymars/"><i class="fa fa-facebook"></i> Facebook</a>,
+	<a href="https://twitter.com/pidaymars?lang=fr"><i class="fa fa-twitter"></i> twitter</a>,
+        <a href="https://www.instagram.com/pidaymarseille/"><i class="fa fa-instagram"></i> Instagram</a> et
+	<a href="https://www.youtube.com/channel/UCxDMMdKvE0Na8Pnr5SAJeJQ/"><i class="fa fa-youtube"></i> YouTube</a>
+	et n'hésitez-pas à nous écrire à l'adresse <a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a>&nbsp;!
+      </h4>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section-partenaires">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-12">
+	<div class="catchphrase,">
+	  <h4>La <em>Tournée de π</em> est organisée par l'association Pi Day,
+	    avec le soutien de la <a href="http://fondation.univ-amu.fr">Fondation Aix-Marseille Université</a>
+	    et de nombreaux autres partenaires que nous <strong>remercions</strong> !</h4>
+	</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 1.5cm">
+      {% for partenaire in site.data.partenaires %}
+      <div class="col-sm-3">
+	<div class="thumbnail thumbnail-partenaires">
+	  <a href="{{ partenaire.website }}">
+	    <img src="{{ "/images/logo-partenaire/" | prepend: site.baseurl | append: partenaire.filename }}" alt="{{ partenaire.acronym }}">
+	  </a>
+	  <div class="caption">
+	    <p><a href="{{ partenaire.website }}">{{ partenaire.name }}</a></p>
+	  </div>
+	</div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div>
+      <h4>avec le parrainage de  la </h4>
+      <div class="thumbnail thumbnail-partenaires">
+	<img src="{{ '/images/logo-partenaire/smf.png' | prepend: site.baseurl }}">
+	<div class="caption">
+	  <p><a href="http://smf.emath.fr/">Société Mathématique de France</a></p>
+	</div>
+      </div>
+    </div>
+    <div class="row text-center">
+    </div>
+    <div class="row" style="margin-top: 1.5cm"></div>
+  </div>
+</div>
