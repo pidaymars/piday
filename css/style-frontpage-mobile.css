@@ -6,6 +6,7 @@ html
 }
 
 .frontpage-mobile-poster {
+	background-color: white;
     background: url('/images/poster-front-page.jpg') no-repeat top center; 
      -webkit-background-size: cover;
     -moz-background-size: cover;

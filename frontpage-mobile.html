@@ -6,7 +6,7 @@ permalink: /mobile/
   function hide_poster() {
     $(".frontpage-mobile-poster").css({ opacity: 0, transition: 'opacity 1s' }).slideUp('slow');
   }
-  $(document).ready(function() {window.setTimeout(hide_poster,2000);});
+  window.onload = (function() {window.setTimeout(hide_poster,2000);});
 </script>
   
 <div class="frontpage-mobile-poster" onclick="hide_poster()"></div>
