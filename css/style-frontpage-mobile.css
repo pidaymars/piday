@@ -33,6 +33,15 @@ html
 }
 .accroche h2 {color: #CCC;}
 .accroche h2 strong {color: #FFF; font-weight: normal;}
+.accroche h2.titre {
+	color: #FFF;
+	font-weight: normal;
+    font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
+}
+.accroche img {
+	height: 2.4vh;
+}
+.accroche h2 img { vertical-align: baseline; }
 
 .reservation-exterieur {
     border-radius: 0;
@@ -92,6 +101,7 @@ h1, h2 {
 	padding: 0;
 }
 h1 {
+    font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
 	font-size: 6.6vh;
 	margin-top: 2.2vh;
 	margin-bottom: 1.1vh;
