@@ -20,6 +20,12 @@ layout: frontpage
   function scroll_to_section_affiches() {  
     $('html,body').animate({scrollTop: $('.section-affiches').offset().top
                                      - $('.navbar').height() },'slow');
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").addClass('affiche-hoover');},500);
+    window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").removeClass('affiche-hoover');},3000);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").addClass('affiche-hoover');},700);
+    window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").removeClass('affiche-hoover');},3200);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").addClass('affiche-hoover');},900);
+    window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").removeClass('affiche-hoover');},3400); 
   }
 
   function scroll_to_section_accroche() {  
