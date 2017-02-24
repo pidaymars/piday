@@ -78,7 +78,7 @@ html, body
     height: 40vh;
 	top: 13vh;
     z-index: 1;
-    background-color: hsla(352, 84%, 60%, 1);
+    background-color: hsla(352, 84%, 60%, 0.9);
 }
 .reservation-interieur-paris {
 	height: 30vw;
@@ -90,7 +90,7 @@ html, body
 	top: 40vh;
     z-index: 3;
     transform: skewY(3deg);
-    background-color: hsla(195, 53%, 33%, 1);
+    background-color: hsla(195, 53%, 33%, 0.9);
 }
 .reservation-interieur-marseille {
 	height: 30vw;
@@ -103,7 +103,7 @@ html, body
 	top: 67.5vh;
     z-index: 5;
     transform: skewY(-2deg);
-    background-color: hsla(120, 37%, 37%, 1)
+    background-color: hsla(120, 37%, 37%, 0.9)
 }
 .reservation-interieur-lyon {
 	height: 30vw;
