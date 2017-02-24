@@ -136,15 +136,15 @@ h2 {
 	margin-top: 0;
 }
 a {
-	color: #CCC;
+	color: #FFF;
 }
 
 .btn {
 	color: #FFF;
 	texte-align: center;
 	padding: 0vh .7vh 0 .7vh;
-	margin-top: 1.1vh;
-	font-size: 3.3vh;
+	margin-top: 2vh;
+	font-size: 2.8vh;
 	position: absolute;
 	z-index: 8;
 	background-color: #00F;
@@ -180,4 +180,5 @@ a {
     letter-spacing: normal;
 	font-size: 3vh;
 	margin: .5vh 2vh .5vh 2vh;
+	
 }
