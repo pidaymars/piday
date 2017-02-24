@@ -27,7 +27,7 @@ html, body
     height: 13vh;
 	top: 0vh;
     z-index: 1;
-    background-color: hsla(0, 0%, 40%, 1);
+    background-color: hsla(0, 0%, 15%, 1);
 	padding: 1.5vh;
 	overflow: hidden;
 	position: absolute;
@@ -40,12 +40,20 @@ html, body
     background-size: contain;
     margin-top: 0vh;
     padding: 0;
-    height: 3vh;
+    height: 4vh;
     margin-bottom: .5vh;
 }
 .accroche h2 {color: #CCC;}
 .accroche h2 strong {color: #FFF; font-weight: normal;}
 .accroche h2.titre {
+	color: #FFF;
+	font-weight: normal;
+    font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
+}
+
+.accroche h3 {color: #CCC;}
+.accroche h3 strong {color: #FFF; font-weight: normal;}
+.accroche h3.titre {
 	color: #FFF;
 	font-weight: normal;
     font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
@@ -70,7 +78,7 @@ html, body
     height: 40vh;
 	top: 13vh;
     z-index: 1;
-    background-color: hsla(214, 49%, 40%, 1);
+    background-color: hsla(352, 84%, 60%, 1);
 }
 .reservation-interieur-paris {
 	height: 30vw;
@@ -82,7 +90,7 @@ html, body
 	top: 40vh;
     z-index: 3;
     transform: skewY(3deg);
-    background-color: hsla(163, 69%, 35%, 1);
+    background-color: hsla(195, 53%, 33%, 1);
 }
 .reservation-interieur-marseille {
 	height: 30vw;
@@ -95,7 +103,7 @@ html, body
 	top: 67.5vh;
     z-index: 5;
     transform: skewY(-2deg);
-    background-color: hsla(31, 49%, 40%, 1)
+    background-color: hsla(120, 37%, 37%, 1)
 }
 .reservation-interieur-lyon {
 	height: 30vw;
@@ -107,7 +115,7 @@ html, body
     font-weight: normal;
     letter-spacing: 1px;
 }
-h1, h2 {
+h1, h2,h3 {
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
@@ -123,6 +131,10 @@ h2 {
 	margin-top: 0;
 }
 
+h2 {
+	font-size: 2.6vh;
+	margin-top: 0;
+}
 a {
 	color: #CCC;
 }
@@ -138,19 +150,19 @@ a {
 	background-color: #00F;
 }
 .reservation-interieur-paris .btn {
-    background-color: hsla(34, 30%, 50%, 1);
-    border-color: hsla(34, 30%, 50%, 1);
-    background-image: linear-gradient(hsla(34, 30%, 55%, 1), hsla(34, 30%, 45%, 1));
+    background-color: hsla(195, 53%, 50%, 1);
+    border-color: hsla(195, 53%, 33%, 1);
+    background-image: linear-gradient(hsla(195, 53%, 50%, 1), hsla(195, 53%, 33%, 1));
 }
 .reservation-interieur-marseille .btn {
-    background-color: hsla(344, 15%, 50%, 1);
-    border-color: hsla(344, 15%, 50%, 1);
-    background-image: linear-gradient(hsla(344, 15%, 55%, 1), hsla(344, 15%, 45%, 1));
+    background-color: hsla(120, 37%, 54%, 1);
+    border-color: hsla(120, 37%, 37%, 1);
+    background-image: linear-gradient(hsla(120, 37%, 54%, 1), hsla(120, 37%, 37%, 1));
 }
 .reservation-interieur-lyon .btn {
-    background-color: hsla(191, 30%, 50%, 1);
-    border-color: hsla(191, 30%, 50%, 1);
-    background-image: linear-gradient(hsla(191, 30%, 55%, 1), hsla(191, 30%, 45%, 1));
+    background-color: hsla(352, 84%, 77%, 1);
+    border-color: hsla(352, 84%, 60%, 1);
+    background-image: linear-gradient(hsla(352, 84%, 77%, 1), hsla(352, 84%, 60%, 1));
 }
 
 .version-desktop {
@@ -158,7 +170,7 @@ a {
     height: 6h;
 	top: 95vh;
     z-index: 7;
-    background-color: hsla(0, 0%, 40%, 1);
+    background-color: hsla(0, 0%, 15%, 1);
 	color: #FFF;
 	position:absolute;
 }
