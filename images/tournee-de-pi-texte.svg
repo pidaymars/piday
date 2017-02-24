@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="296.621"
+   height="48.28928"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="tournee-de-pi-texte.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="155.45325"
+     inkscape:cy="-37.6259"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="903"
+     inkscape:window-height="711"
+     inkscape:window-x="75"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-41.846998,-143.13019)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2985"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:1.82385969px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bebas;-inkscape-font-specification:Bebas"
+       transform="matrix(1.0965756,0,0,1.0965756,-4.0409522,-18.48646)"><flowRegion
+         id="flowRegion2987"><rect
+           id="rect2989"
+           width="554.28571"
+           height="457.14285"
+           x="40"
+           y="146.6479"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:1.82385969px;font-family:Bebas;-inkscape-font-specification:Bebas" /></flowRegion><flowPara
+         id="flowPara2991">Tournee </flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:4.04590702;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 173.21195,149.10723 15.7434,-3.95409"
+       id="path2995"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:88.76725006px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:STIXGeneral;-inkscape-font-specification:STIXGeneral"
+       x="285.91962"
+       y="195.86162"
+       id="text3765"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0297001,0.97115656)"><tspan
+         sodipodi:role="line"
+         id="tspan3767"
+         x="285.91962"
+         y="195.86162">π</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:44.91228104px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:2px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bebas;-inkscape-font-specification:Bebas"
+       x="232.87663"
+       y="191.41919"
+       id="text3769"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3771"
+         x="232.87663"
+         y="191.41919">de</tspan></text>
+  </g>
+</svg>

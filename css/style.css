@@ -39,3 +39,7 @@ html, body {
 .social a:hover {
   text-decoration: none;
 }
+
+.font-bebas {
+    font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
+}

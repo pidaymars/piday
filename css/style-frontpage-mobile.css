@@ -32,6 +32,17 @@ html, body
 	overflow: hidden;
 	position: absolute;
 }
+.accroche .titre-tournee {
+    background-image: url('/images/tournee-de-pi-blanc.png');
+    background-image: url('/images/tournee-de-pi-chemin-blanc.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    margin-top: 0vh;
+    padding: 0;
+    height: 3vh;
+    margin-bottom: .5vh;
+}
 .accroche h2 {color: #CCC;}
 .accroche h2 strong {color: #FFF; font-weight: normal;}
 .accroche h2.titre {

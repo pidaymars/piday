@@ -204,14 +204,18 @@ div.section-accroche {
     margin-top: 1em;
 }
 div.section-accroche .titre-comedie {
-    background-image: url('/images/titre-comedie.png');
+    /*background-image: url('/images/titre-comedie.png');
     background-image: url('/images/titre-comedie.svg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
     height: 2em;
     margin-top: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 1em;*/
+    color: #777;
+    font-family: bebas-neue, 'Helvetica Neue', Helvetica, 'Open Sans';
+    letter-spacing: 0px;
+    font-size: 200%;
 }
 div.section-accroche p { margin-top: 1em; }
 div.section-accroche .description-comedie {
