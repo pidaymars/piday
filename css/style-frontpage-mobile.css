@@ -191,10 +191,10 @@ a {
   top: 10vh;
   left: -20vh;
   text-align: center;
-  line-height: 2.2vh;
+  line-height: 2.5vh;
   padding-top: .5vh;
   padding-bottom: .5vh;
-  font-size: 2vh;
+  font-size: 2.5vh;
   letter-spacing: 1px;
   color: white;
   transform: rotate(-45deg);
@@ -208,7 +208,7 @@ a {
   box-shadow: 0 0 3px rgba(0,0,0,.3);
 }
 .corner-ribbon.top-right{
-  top: 4vh;
+  top: 3vh;
   right: -9vh;
   left: auto;
   transform: rotate(45deg);
