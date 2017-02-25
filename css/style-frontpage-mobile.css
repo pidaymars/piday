@@ -191,7 +191,9 @@ a {
   top: 10vh;
   left: -20vh;
   text-align: center;
-  line-height: 3vh;
+  line-height: 2.2vh;
+  padding-top: .5vh;
+  padding-bottom: .5vh;
   font-size: 2vh;
   letter-spacing: 1px;
   color: white;
@@ -206,8 +208,8 @@ a {
   box-shadow: 0 0 3px rgba(0,0,0,.3);
 }
 .corner-ribbon.top-right{
-  top: 5vh;
-  right: -8vh;
+  top: 4vh;
+  right: -9vh;
   left: auto;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
