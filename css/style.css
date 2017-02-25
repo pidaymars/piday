@@ -1,3 +1,17 @@
+/*Début Logo sur onglet*/
+
+#logo {
+    height: 15em;
+    background-image: url('../images/background/logo_geometrique.png'); /* cette ligne sera ignorée si le svg est supporté */
+    background-image: url('../images/background/logo_geometrique.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /*background-attachment: fixed;*/
+}
+
+/*Fin Logo sur onglet*/
+
 body {
     background-color: #fff;
     font-family: 'Helvetica Neue', Helvetica, 'Open Sans';
