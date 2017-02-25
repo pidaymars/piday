@@ -137,7 +137,7 @@ div.affiches .affiche-paris-container .text-center .theatre a {
     color: rgba(190, 136, 65, 1);
 }
 div.affiches .affiche-marseille-container .text-center .theatre a {
-    color: rgba(153, 102, 116, 1);
+    color: rgba(3, 172, 84, 1);
 }
 div.affiches .affiche-lyon-container .text-center .theatre a {
     color: rgba(64, 168, 191, 1);
@@ -177,9 +177,9 @@ div.affiches .affiche-paris-container .text-center a.btn-primary {
     background-image: linear-gradient(hsla(34, 49%, 55%, 1), hsla(34, 49%, 45%, 1));
 }
 div.affiches .affiche-marseille-container .text-center a.btn-primary {
-    background-color: hsla(344, 20%, 50%, 1);
-    border-color: hsla(344, 20%, 50%, 1);
-    background-image: linear-gradient(hsla(344, 20%, 55%, 1), hsla(344, 20%, 45%, 1));
+    background-color: hsla(149, 50%, 50%, 1);
+    border-color: hsla(149, 50%, 50%, 1);
+    background-image: linear-gradient(hsla(149, 50%, 55%, 1), hsla(149, 50%, 45%, 1));
 }
 div.affiches .affiche-lyon-container .text-center a.btn-primary {
     background-color: hsla(191, 50%, 50%, 1);
