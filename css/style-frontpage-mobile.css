@@ -205,3 +205,11 @@ a {
 .corner-ribbon.shadow{
   box-shadow: 0 0 3px rgba(0,0,0,.3);
 }
+.corner-ribbon.top-right{
+  top: 47px;
+  right: -88px;
+  left: auto;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.corner-ribbon.green{background: #2c7;}
