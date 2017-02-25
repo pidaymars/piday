@@ -311,7 +311,7 @@ div.section-partenaires {
 /* The ribbons */
 
 .corner-ribbon{
-  width: 200px;
+  width: 300px;
   background: #e43;
   position: absolute;
   top: 25px;
@@ -322,6 +322,7 @@ div.section-partenaires {
   color: #f0f0f0;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  z-index:10;
 }
 
 /* Custom styles */
@@ -344,8 +345,8 @@ div.section-partenaires {
 }
 
 .corner-ribbon.top-right{
-  top: 25px;
-  right: -50px;
+  top: 95px;
+  right: -80px;
   left: auto;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
