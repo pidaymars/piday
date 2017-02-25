@@ -8,4 +8,4 @@ baseurl: ""
 #url: "http://www.piday.fr" # the base hostname & protocol for your site
 
 gems:
-  - jekyll-redirect-from
+#  - jekyll-redirect-from
