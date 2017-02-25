@@ -22,7 +22,7 @@
     $('.navbar').slideDown("slow");
     $('.section-affiches').css("margin-top",$('.navbar').height()+"px");
 	$("*").stop(true,true);
-	$(".frontpage-poster").slideUp("slow", function(){$('.corner-ribbon').css('top': '95px')});
+	$(".frontpage-poster").slideUp("slow", function(){$('.corner-ribbon').css({'top': '95px'})});
 	window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 2});},500);
 	window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 4});},700);
 	window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 6});},900);
