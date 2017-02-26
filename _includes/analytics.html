@@ -10,15 +10,21 @@
   var corner_ribbon_label = "Soutenez-nous !";
   
   var trackOutboundLink = function(url, category, label) {
-    try {
+	if (ga.q) { 
+	window.location = url;
+	}
+	else { try {
       ga('send', 'event', {
         'eventCategory' : category,
 	    'eventAction' : 'click',
 	    'eventLabel' : label,
         'transport' : 'beacon',
-        'hitCallback' : function(){window.location = url;}});
+        'hitCallback' : 
+		function(){
+		window.location = url;
+		}});
     }
-	catch(err) { window.location = url; }
+	catch(err) { window.location = url; }}
   }
   
   $(".corner-ribbon").html(corner_ribbon_label);
