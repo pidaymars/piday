@@ -27,10 +27,11 @@
 	catch(err) { window.location = url; }}
   }
   
+  var eventbrite_url = $(".corner-ribbon-link").attr("href");
   $(".corner-ribbon").html(corner_ribbon_label);
   $(".corner-ribbon-link").on("click",
     function() {
-      trackOutboundLink($(".corner-ribbon-link").attr("href"),
+      trackOutboundLink(eventbrite_url,
 	                    "Clic indiegogo - desktop",
                         corner_ribbon_label)});
   $(".corner-ribbon-link").attr("href","#");
