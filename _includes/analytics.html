@@ -8,7 +8,7 @@ try {
   ga('send', 'pageview');
   
   if (device == "desktop")  {
-  var corner-ribbon-label = "Soutenez-nous !";
+  var corner_ribbon_label = "Soutenez-nous !";
   
   var trackOutboundLink = function(url, category, label) {
     try {
@@ -22,12 +22,12 @@ try {
 	catch(err) { window.location = url; }
   }
   
-  $(".corner-ribbon").html(corner-ribbon-label);
+  $(".corner-ribbon").html(corner_ribbon_label);
   $(".corner-ribbon-link").on("click",
     function() {
       trackOutboundLink($(".corner-ribbon-link").attr("href"),
 	                    "Clic indiegogo - desktop",
-                        corner-ribbon-label)});
+                        corner_ribbon_label)});
   $(".corner-ribbon-link").attr("href","#");
   }
   }
