@@ -11,13 +11,15 @@ layout: frontpage
 
 </head>
 <body class="frontpage">
+
+  <script>var device = "desktop";</script>
 	
+  {% include analytics.html %}
   {% include navbar.html %}
 	
   {{ content }}
 
   {% include footer.html %}
-  {% include analytics.html %}
 	
 </body>
 </html>
