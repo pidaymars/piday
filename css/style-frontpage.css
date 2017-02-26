@@ -134,13 +134,13 @@ div.affiches .text-center a.theatre {
     text-decoration: none;
 }
 div.affiches .affiche-paris-container .text-center .theatre a {
-    color: rgba(190, 136, 65, 1);
+    color: rgba(64, 168, 191, 1);
 }
 div.affiches .affiche-marseille-container .text-center .theatre a {
     color: rgba(3, 172, 84, 1);
 }
 div.affiches .affiche-lyon-container .text-center .theatre a {
-    color: rgba(64, 168, 191, 1);
+    color: rgba(190, 136, 65, 1);
 }
 div.affiches .text-center .cestgratuit {
     margin-top: 1.5em;
@@ -172,9 +172,9 @@ div.affiches a.btn-primary {
   color:white;
 }
 div.affiches .affiche-paris-container .text-center a.btn-primary {
-    background-color: hsla(34, 49%, 50%, 1);
-    border-color: hsla(34, 49%, 50%, 1);
-    background-image: linear-gradient(hsla(34, 49%, 55%, 1), hsla(34, 49%, 45%, 1));
+    background-color: hsla(191, 50%, 50%, 1);
+    border-color: hsla(191, 50%, 50%, 1);
+    background-image: linear-gradient(hsla(191, 50%, 55%, 1), hsla(191, 50%, 45%, 1));
 }
 div.affiches .affiche-marseille-container .text-center a.btn-primary {
     background-color: hsla(149, 50%, 50%, 1);
@@ -182,9 +182,9 @@ div.affiches .affiche-marseille-container .text-center a.btn-primary {
     background-image: linear-gradient(hsla(149, 50%, 55%, 1), hsla(149, 50%, 45%, 1));
 }
 div.affiches .affiche-lyon-container .text-center a.btn-primary {
-    background-color: hsla(191, 50%, 50%, 1);
-    border-color: hsla(191, 50%, 50%, 1);
-    background-image: linear-gradient(hsla(191, 50%, 55%, 1), hsla(191, 50%, 45%, 1));
+    background-color: hsla(34, 49%, 50%, 1);
+    border-color: hsla(34, 49%, 50%, 1);
+    background-image: linear-gradient(hsla(34, 49%, 55%, 1), hsla(34, 49%, 45%, 1));
 }
 div.affiches .btn-group {
   margin-top: 0.5em;
