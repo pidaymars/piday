@@ -353,10 +353,11 @@ $(document).on('scroll', function() {
 </div>
 
 <script>
+window.onload = function () { 
 if (target_section == "affiches") { scroll_to_section_affiches(); }
 else if (target_section == "reservations") { scroll_to_section_reservations(); }
 else if (target_section == "accroche") { scroll_to_section_accroche(); }
 else if (target_section == "crowdfunding") { scroll_to_section_crowdfunding(); }
 else if (target_section == "association") { scroll_to_section_association(); }
-else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
+else if (target_section == "partenaires") { scroll_to_section_partenaires(); } }
 </script>
