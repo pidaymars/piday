@@ -19,6 +19,7 @@
 
   var animation_affiches_montree = false;
   var navbar_on = false;
+  var target_section = "{{ page.section }}";
 
   function first_scroll() {
   $(window).off('scroll');
@@ -98,7 +99,7 @@ $(document).on('scroll', function() {
     $('html,body').animate({scrollTop: $('.section-partenaires').offset().top
                                      - $('.navbar').height() },'slow');
   }
-
+  
   {% if page.device == "unknown" %}
   if (window.matchMedia("(orientation:portrait)").match ||
 	(/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) 	{
@@ -350,3 +351,12 @@ $(document).on('scroll', function() {
     <div class="row" style="margin-top: 1.5cm"></div>
   </div>
 </div>
+
+<script>
+if (target_section == "affiches") { scroll_to_section_affiches(); }
+else if (target_section == "reservations") { scroll_to_section_reservations(); }
+else if (target_section == "accroche") { scroll_to_section_accroche(); }
+else if (target_section == "crowdfunding") { scroll_to_section_crowdfunding(); }
+else if (target_section == "association") { scroll_to_section_association(); }
+else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
+</script>
