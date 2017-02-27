@@ -9,9 +9,13 @@ div.frontpage-poster {
     height: 61vw
 }
 
-Nav.frontpage {
+nav.frontpage {
     overflow-y:hidden;
     display: none;
+}
+nav a.section-active {
+    color: black;
+    font-weight: bold;
 }
 
 .affiche-paris { 
@@ -323,6 +327,8 @@ div.section-partenaires {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   z-index:10;
+  -webkit-transition-duration: .4s; /* Safari */
+  transition-duration: .4s;
 }
 .corner-ribbon.sticky{
   position: fixed;

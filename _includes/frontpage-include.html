@@ -17,6 +17,9 @@
 
 <script>
 
+  var animation_affiches_montree = false;
+  var navbar_on = false;
+
   function first_scroll() {
   $(window).off('scroll');
   $('.navbar').slideDown("slow", function() { 
@@ -24,22 +27,41 @@
   }
   
 $(document).on('scroll', function() {
-    if($(this).scrollTop()>=$('.section-affiches').position().top-3*$('.navbar').height()){
-        $(document).off('scroll');
-  window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 2});},100);
-	window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 4});},300);
-	window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 6});},500);
-	window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "",'visibility': "",'opacity': "", 'transition-delay': "", 'z-index' : ""});},2600);
-	window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "",'visibility': "",'opacity': "", 'transition-delay': "", 'z-index': ""});},2800);
-	window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "",'visibility': "",'opacity': "", 'transition-delay': "", 'z-index': ""});},3000);
+  if(!animation_affiches_montree && $(this).scrollTop()>=$('.section-affiches').position().top-2*$('.navbar').height()){
+    $(window).on('DOMMouseScroll mousewheel', function(e) { e.preventDefault(); e.stopPropagation(); });
+    window.setTimeout(function() { $(window).off('DOMMouseScroll mousewheel'); }, 1000);
+    scroll_to_section_affiches("fast");
+  }
 
+  var sections=['affiches', 'accroche', 'reservations', 'crowdfunding', 'association', 'partenaires'];
+
+  for (var i=sections.length-1; i>=0; i--)
+  {
+    if ( ( $(this).scrollTop()>=$('.section-' + sections[i]).offset().top - $('.navbar').height()-10) && 
+    (i==sections.length-1 || $(this).scrollTop()<$('.section-'+sections[i+1]).offset().top-$('.navbar').height() -10)) {
+      $('#lien-' + sections[i]).addClass('section-active');
     }
+    else
+     { $('#lien-' + sections[i]).removeClass('section-active'); }
+  }
+
+  if (navbar_on && $(this).scrollTop() == 0) {
+    navbar_on = false;
+    $('.corner-ribbon').css({'top': ''});
+    $('.navbar').slideUp("slow");
+  }
+  if (!navbar_on && $(this).scrollTop() > 0) {
+    navbar_on = true;
+    $('.navbar').slideDown("slow");
+    $('.corner-ribbon').css({'top': '95px'});
+  }
+
 });
 
-  function scroll_to_section_affiches() {
-  $(document).off('scroll');
+  function scroll_to_section_affiches(duration) {
+  animation_affiches_montree = true;
   $('html,body').animate({scrollTop: $('.section-affiches').offset().top - $('.navbar').height() },
-  	{ duration: "slow", complete : function() {
+  	{ duration: duration, complete : function() {
 		window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 2});},500);
 		window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 4});},700);
 		window.setTimeout(function() {$(".affiche-lyon-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 6});},900);
@@ -52,27 +74,27 @@ $(document).on('scroll', function() {
   $(window).on('scroll', first_scroll);
   
   function scroll_to_section_accroche() {  
-  $(document).off('scroll');
+  animation_affiches_montree = true;
     $('html,body').animate({scrollTop: $('.section-accroche').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_reservations() { 
-  $(document).off('scroll'); 
-    $('html,body').animate({scrollTop: $('.section-accroche .affiches').offset().top
+  animation_affiches_montree = true;
+    $('html,body').animate({scrollTop: $('.section-reservations').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_crowdfunding() {  
-  $(document).off('scroll');
+  animation_affiches_montree = true;
     $('html,body').animate({scrollTop: $('.section-crowdfunding').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_association() {  
-  $(document).off('scroll');
+  animation_affiches_montree = true;
     $('html,body').animate({scrollTop: $('.section-association').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_partenaires() {  
-  $(document).off('scroll');
+  animation_affiches_montree = true;
     $('html,body').animate({scrollTop: $('.section-partenaires').offset().top
                                      - $('.navbar').height() },'slow');
   }
@@ -170,7 +192,7 @@ $(document).on('scroll', function() {
 	lassés du turbin de la thèse...</div>
       <p>Entrée gratuite, réservez dès à présent vos places&nbsp;:</p>
 
-    <div class="affiches">
+    <div class="affiches section-reservations">
 	<div class="box affiche-marseille-container affiche-container">
 	  <figure>
 	    <figcaption class="affiche-verso affiche-verso-fixe">
