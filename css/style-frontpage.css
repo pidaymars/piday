@@ -13,9 +13,12 @@ nav.frontpage {
     overflow-y:hidden;
     display: none;
 }
-nav a.section-active {
-    color: black;
+.navbar-default .navbar-nav>li>a.section-active {
+    color: #555;
     font-weight: bold;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: #333;
 }
 
 .affiche-paris { 
