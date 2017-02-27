@@ -5,10 +5,11 @@ div.frontpage-poster {
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
-    height: 100vh;
+    width: 100vw;
+    height: 61vw
 }
 
-nav.frontpage {
+Nav.frontpage {
     overflow-y:hidden;
     display: none;
 }
