@@ -37,8 +37,8 @@ $(document).on('scroll', function() {
 
   for (var i=sections.length-1; i>=0; i--)
   {
-    if ( ( $(this).scrollTop()>=$('.section-' + sections[i]).offset().top - $('.navbar').height()-10) && 
-    (i==sections.length-1 || $(this).scrollTop()<$('.section-'+sections[i+1]).offset().top-$('.navbar').height() -10)) {
+    if ( ( $(this).scrollTop()>=$('.section-' + sections[i]).offset().top - $('.navbar').height() - 200) && 
+    (i==sections.length-1 || $(this).scrollTop()<$('.section-'+sections[i+1]).offset().top-$('.navbar').height() - 200)) {
       $('#lien-' + sections[i]).addClass('section-active');
     }
     else
