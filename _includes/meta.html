@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="user-scalable = no, width=device-width, initial-scale=1">
 
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 {% if page.title == "404" %}
 <meta http-equiv="refresh" content="3; url=/">
 {% endif %}
