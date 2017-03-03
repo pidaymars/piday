@@ -22,6 +22,7 @@
            <li class="active"><a href="#">Link</a></li>
            <li><a href="#">Link</a></li>
       </ul> -->
+{% if page.layout == 'frontpage' %}
       <ul class="nav navbar-nav navbar-right">
         <li><a id="lien-affiches" class="page-link" onclick="event.preventDefault(); scroll_to_section_affiches('slow')" href="#">La tournée</a></li>
         <li><a id="lien-accroche" class="page-link" onclick="event.preventDefault(); scroll_to_section_accroche()" href="#">Le spectacle</a></li>
@@ -31,6 +32,17 @@
 	<li><a id="lien-partenaires" class="page-link" onclick="event.preventDefault(); scroll_to_section_partenaires()" href="#">Nos partenaires</a></li>
 	<li><a class="page-link" href="http://youtu.be/1DOI-a-1_4o?list=PLHn5WCTrhnZVDscCsuEZPA0rHt6IYXEbk" target="_blank">Vidéos</a></li>
       </ul>
+{% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="lien-affiches" class="page-link" href="/tournee/">La tournée</a></li>
+        <li><a id="lien-accroche" class="page-link" href="/spectacle/">Le spectacle</a></li>
+        <li><a id="lien-reservations" class="page-link" href="/reservations/">Réservations</a></li>
+        <li><a id="lien-crowdfunding" class="page-link" href="crowdfunding">Soutenez-nous</a></li>
+	<li><a id="lien-association" class="page-link" href="/association/">Qui sommes-nous&nbsp;?</a></li>	
+	<li><a id="lien-partenaires" class="page-link" href="/partenaires/">Nos partenaires</a></li>
+	<li><a class="page-link" href="http://youtu.be/1DOI-a-1_4o?list=PLHn5WCTrhnZVDscCsuEZPA0rHt6IYXEbk" target="_blank">Vidéos</a></li>
+      </ul>
+{% endif %}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
