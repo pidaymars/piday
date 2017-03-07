@@ -326,7 +326,7 @@ $(document).on('scroll', function() {
       <div class="col-xs-12">
 	<div class="catchphrase,">
 	  <h4>La <em>Tournée de π</em> est organisée par l'association Pi Day,
-	    avec le soutien de la <a href="http://fondation.univ-amu.fr">Fondation Aix-Marseille Université</a>
+	    grace au soutien de la <a href="http://fondation.univ-amu.fr">Fondation Aix-Marseille Université</a>
 	    et de nombreaux autres partenaires que nous <strong>remercions</strong> !</h4>
 	</div>
       </div>
@@ -347,7 +347,7 @@ $(document).on('scroll', function() {
     </div>
     
     <div>
-      <h4>avec le parrainage de  la </h4>
+      <h4>Avec le parrainage de la </h4>
       <div class="thumbnail thumbnail-partenaires">
 	<img src="{{ '/images/logo-partenaire/smf.png' | prepend: site.baseurl }}">
 	<div class="caption">
@@ -355,6 +355,29 @@ $(document).on('scroll', function() {
 	</div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+	<div class="catchphrase,">
+	  <h4>Nous remercions également tous nos amis&nbsp;:</h4>
+	</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 1.5cm">
+      {% for partenaire in site.data.amis %}
+      <div class="col-sm-3">
+	<div class="thumbnail thumbnail-partenaires">
+	  <a href="{{ partenaire.website }}">
+	    <img src="{{ "/images/logo-partenaire/" | prepend: site.baseurl | append: partenaire.filename }}" alt="{{ partenaire.acronym }}">
+	  </a>
+	  <div class="caption">
+	    <p><a href="{{ partenaire.website }}">{{ partenaire.name }}</a></p>
+	  </div>
+	</div>
+      </div>
+      {% endfor %}
+    </div>
+
     <div class="row text-center">
     </div>
     <div class="row" style="margin-top: 1.5cm"></div>
