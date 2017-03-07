@@ -60,8 +60,8 @@ $(document).on('scroll', function() {
 });
 
   function scroll_to_section_affiches(duration) {
-  animation_affiches_montree = true;
-  $('html,body').animate({scrollTop: $('.section-affiches').offset().top - $('.navbar').height() },
+    desarmer_animation_affiches();
+    $('html,body').animate({scrollTop: $('.section-affiches').offset().top - $('.navbar').height() },
   	{ duration: duration, complete : function() {
 		window.setTimeout(function() {$(".affiche-paris-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 2});},500);
 		window.setTimeout(function() {$(".affiche-marseille-container .affiche-verso").css({'transform': "translateY(0%)",'visibility': "visible",'opacity': 1, 'transition-delay': "0s, 0s, 0.3s", 'z-index': 4});},700);
@@ -74,28 +74,33 @@ $(document).on('scroll', function() {
 
   $(window).on('scroll', first_scroll);
   
+  function desarmer_animation_affiches() {
+    animation_affiches_montree = true;
+    $('#invite-scroll').fadeOut('fast');
+  }
+    
   function scroll_to_section_accroche() {  
-  animation_affiches_montree = true;
+    desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-accroche').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_reservations() { 
-  animation_affiches_montree = true;
+    desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-reservations').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_crowdfunding() {  
-  animation_affiches_montree = true;
+    desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-crowdfunding').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_association() {  
-  animation_affiches_montree = true;
+    desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-association').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_partenaires() {  
-  animation_affiches_montree = true;
+    desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-partenaires').offset().top
                                      - $('.navbar').height() },'slow');
   }
@@ -112,7 +117,11 @@ $(document).on('scroll', function() {
 <div class="corner-ribbon top-right sticky green shadow">Soutenez-nous&nbsp;!</div>
 </a>
 
-<div class="frontpage-poster" onclick="scroll_to_section_affiches()"></div>
+<div class="frontpage-poster" onclick="scroll_to_section_affiches('slow')"></div>
+
+<div class="text-center">
+<span class="glyphicon glyphicon-chevron-down" id="invite-scroll" onclick="scroll_to_section_affiches('slow')"></span>
+</div>
 
 <div class="container row text-center center section-affiches">
   <div class="affiches">
