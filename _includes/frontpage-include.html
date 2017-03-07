@@ -99,6 +99,11 @@ $(document).on('scroll', function() {
     $('html,body').animate({scrollTop: $('.section-association').offset().top
                                      - $('.navbar').height() },'slow');
   }
+  function scroll_to_section_presse() {  
+    desarmer_animation_affiches();
+    $('html,body').animate({scrollTop: $('.section-presse').offset().top
+                                     - $('.navbar').height()*1.5 },'slow');
+  }
   function scroll_to_section_partenaires() {  
     desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-partenaires').offset().top
@@ -193,7 +198,7 @@ $(document).on('scroll', function() {
   <div class="col-sm-12" style="padding-left:4em; padding-right: 4em; "> <!-- :-/ -->
     <div class="catchphrase text-center">
       <p>Voyage en musique au pays du hasard et des mathématiques&nbsp;: du 14 au 19 mars, l'<strong><a href="#" onclick="scroll_to_section_association()">association Pi Day</a></strong> vous invite à Paris, Marseille et Lyon pour partager la plus irrationnelle des soirées musicales&nbsp;!</p>
-      <p>Au programme, sciences, musique et spectacle, avec des mini-conférences vivantes et pleines d'énergie, et la première <strong>comédie musicale mathématique</strong> <em>made in Marseille</em>&nbsp;:</p>
+      <p>Au programme, sciences, musique et spectacle, avec des mini-conférences vivantes et pleines d'énergie, et la nouvelle <strong>comédie musicale mathématique</strong> <em>made in Marseille</em>&nbsp;:</p>
 
       <div class="titre-comedie">From <span style="color: rgba(117, 10, 24, 1);">Marseille</span> to  <span style="color: black;">Vegas</span></div>
 
@@ -273,18 +278,14 @@ $(document).on('scroll', function() {
 
 
 <div class="section-crowdfunding">
-  <div class="row">
-    <div class="col-sm-12" style="padding-left:4em; padding-right:4em;"> <!-- :-/ -->
-      <div class="catchphrase text-center">
-	<h3>
+  <div class="container">
+    <div class="catchphrase text-center">
 	  <p>La tournée de Pi a aussi besoin de vous&nbsp;! Pour nous permettre de réaliser les vidéos du spectacle, soutenez-nous à travers notre <a href="https://www.indiegogo.com/projects/tournee-de-pi-science-musical#/">campagne de crowdfunding</a>&nbsp;!</p>
-	</h3>
-      </div>
     </div>
-    <div style="margin-top: 18pt;">
-      <div class="embed-responsive embed-responsive-16by9 center-block embedded-youtube">
-	<iframe class="embed-responsive-item" style="max-width:569px; max-height:320px;" src="https://www.youtube.com/embed/Ohfk8ian6ms"></iframe>
-      </div>
+  </div>
+  <div style="margin-top: 18pt;">
+    <div class="embed-responsive embed-responsive-16by9 center-block embedded-youtube">
+      <iframe class="embed-responsive-item" style="max-width:569px; max-height:320px;" src="https://www.youtube.com/embed/Ohfk8ian6ms"></iframe>
     </div>
   </div>
 </div>
@@ -318,18 +319,26 @@ $(document).on('scroll', function() {
   </div>
 </div>
 
-
+<div class="section-presse">
+  <div class="container text-center">
+    <div class="catchphrase">
+      <p>
+	Retrouvez toutes nos informations dans notre <strong>communiqué de presse</strong>&nbsp;:
+      </p>
+      <p>
+	<a href="/documents/communique-presse-tournee-pi/communique-presse-tournee-pi.pdf" style="margin-right:2em;"><i class="fa fa-file" aria-hidden="true"></i> ficher pdf</a>
+	<a href="/documents/communique-presse-tournee-pi.zip"><i class="fa fa-file-archive-o" aria-hidden="true"></i> archive <em>zip</em> multi-formats</a>
+      </p>
+    </div>
+  </div>
+</div>
 
 <div class="section-partenaires">
   <div class="container">
-    <div class="row text-center">
-      <div class="col-xs-12">
-	<div class="catchphrase,">
-	  <h4>La <em>Tournée de π</em> est organisée par l'association Pi Day,
+    <div class="catchphrase text-center">
+	  <p>La <em>Tournée de π</em> est organisée par l'association Pi Day,
 	    grace au soutien de la <a href="http://fondation.univ-amu.fr">Fondation Aix-Marseille Université</a>
-	    et de nombreaux autres partenaires que nous <strong>remercions</strong> !</h4>
-	</div>
-      </div>
+	    et de nombreaux autres partenaires que nous <strong>remercions</strong> !</p>
     </div>
     <div class="row" style="margin-top: 1.5cm">
       {% for partenaire in site.data.partenaires %}
@@ -347,7 +356,9 @@ $(document).on('scroll', function() {
     </div>
     
     <div>
-      <h4>Avec le parrainage de la </h4>
+      <div class="catchphrase">
+	  <p>Avec le parrainage de la </p>
+      </div>
       <div class="thumbnail thumbnail-partenaires">
 	<img src="{{ '/images/logo-partenaire/smf.png' | prepend: site.baseurl }}">
 	<div class="caption">
@@ -355,29 +366,27 @@ $(document).on('scroll', function() {
 	</div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-	<div class="catchphrase,">
-	  <h4>Nous remercions également tous nos amis&nbsp;:</h4>
-	</div>
+    
+    <div>
+      <div class="catchphrase">
+	<p>Nous remercions également tous nos amis&nbsp;:
       </div>
-    </div>
-    <div class="row" style="margin-top: 1.5cm">
-      {% for partenaire in site.data.amis %}
-      <div class="col-sm-3">
-	<div class="thumbnail thumbnail-partenaires">
-	  <a href="{{ partenaire.website }}">
-	    <img src="{{ "/images/logo-partenaire/" | prepend: site.baseurl | append: partenaire.filename }}" alt="{{ partenaire.acronym }}">
-	  </a>
-	  <div class="caption">
-	    <p><a href="{{ partenaire.website }}">{{ partenaire.name }}</a></p>
+      <div class="row" style="margin-top: 1.5cm">
+	{% for partenaire in site.data.amis %}
+	<div class="col-sm-3">
+	  <div class="thumbnail thumbnail-partenaires">
+	    <a href="{{ partenaire.website }}">
+	      <img src="{{ "/images/logo-partenaire/" | prepend: site.baseurl | append: partenaire.filename }}" alt="{{ partenaire.acronym }}">
+	    </a>
+	    <div class="caption">
+	      <p><a href="{{ partenaire.website }}">{{ partenaire.name }}</a></p>
+	    </div>
 	  </div>
 	</div>
+	{% endfor %}
       </div>
-      {% endfor %}
     </div>
-
+    
     <div class="row text-center">
     </div>
     <div class="row" style="margin-top: 1.5cm"></div>
@@ -391,5 +400,7 @@ else if (target_section == "reservations") { scroll_to_section_reservations(); }
 else if (target_section == "accroche") { scroll_to_section_accroche(); }
 else if (target_section == "crowdfunding") { scroll_to_section_crowdfunding(); }
 else if (target_section == "association") { scroll_to_section_association(); }
-else if (target_section == "partenaires") { scroll_to_section_partenaires(); } }
+else if (target_section == "presse") { scroll_to_section_presse(); }
+else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
+}
 </script>

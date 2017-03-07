@@ -18,6 +18,7 @@ div.frontpage-poster {
     background-image: linear-gradient(0deg, rgba(0,0,0,.6), rgba(0,0,0,0));
     text-shadow: 0 1px 2px rgba(0,0,0,.6);
     color: rgba(235,235,235,.6);
+    cursor: default;
 }
 #invite-scroll:hover {
     color: rgba(235,235,235,.8);
@@ -297,13 +298,17 @@ div.section-association {
     overflow: hidden;
     background-color: black;
     margin-top: 2em;
+    margin-bottom: 5em;
 }
 div.section-association .catchphrase {
     color: #AAA;
 }
 
+div.section-presse {
+    margin-bottom: 2em;
+}
+
 div.section-partenaires {
-    padding-top: 5em;
 }
 .thumbnail-partenaires {
   display: block;
