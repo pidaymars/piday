@@ -307,6 +307,9 @@ div.section-association .catchphrase {
 .catchphrase li {
 	font-size: 18px;
 }
+.catchphrase .weak {
+	color: #777;
+}
 
 div.section-presse {
     margin-bottom: 2em;
