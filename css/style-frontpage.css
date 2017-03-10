@@ -304,6 +304,10 @@ div.section-association .catchphrase {
     color: #AAA;
 }
 
+.catchphrase .li {
+	font-size: 18px;
+}
+
 div.section-presse {
     margin-bottom: 2em;
 }
