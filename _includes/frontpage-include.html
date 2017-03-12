@@ -308,7 +308,7 @@ $(document).on('scroll', function() {
   
   <div id="carousel-tartes" class="carousel">
     <div class="carousel-inner">
-    {% for tarte in site.data.carousel-tartes %}
+    {% for tarte in site.data.tartes-carousel %}
       {% if forloop.index0 == 0 %}
       <div class="item active" title="{{ tarte.name }}">
       {% else %}
