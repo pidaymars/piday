@@ -295,8 +295,11 @@ div.section-accroche .affiches {
 .section-tartes .carousel .carousel-control {
     background-image: none;
 }
-.section-tartes .carousel .carousel-control .icon-prev {
+.section-tartes .carousel .left i {
 	margin-left: -25px;
+}
+.section-tartes .carousel .right i {
+	margin-right: -25px;
 }
 
 .section-crowdfunding {

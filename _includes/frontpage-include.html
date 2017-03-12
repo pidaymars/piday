@@ -304,7 +304,7 @@ $(document).on('scroll', function() {
         <strong>salées ou sucrées</strong>, toutes les tartes sont acceptées pour
         ce concours qui mêle plaisir gastronomique et sciences&nbsp;!</p>
 		  
-      <div id="carousel-tartes" class="carousel">
+      <div id="carousel-tartes" class="carousel slide"  data-interval="false">
       <div class="carousel-inner">
         {% for tarte in site.data.tartes-carousel %}
           {% if forloop.index0 == 0 %}
@@ -514,15 +514,7 @@ else if (target_section == "association") { scroll_to_section_association(); }
 else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
 }
 
-$('#carousel-tartes').on('slid.bs.carousel', function () {
-  $('#carousel-tartes').carousel({
-    pause: true,
-    interval: false
-  });
-})
-
-$('#carousel-tartes').carousel({
-  pause: true,
-  interval: false
-});
+$.fn.carousel.defaults = {
+    interval: false, pause: true
+  }
 </script>
