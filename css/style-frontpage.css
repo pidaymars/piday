@@ -273,7 +273,9 @@ div.section-accroche .affiches {
     background-color: rgba(38, 26, 13, 1);
 }
 
-
+.section-tartes {
+    clear: both;
+}
 
 
 .section-crowdfunding {
