@@ -289,11 +289,12 @@ div.section-accroche .affiches {
 .section-tartes #carousel-tartes img {
 	border: none;
 	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
 	border-radius: 0px;
+	margin-bottom: 0px;
 }
 .section-tartes .carousel .carousel-control {
     background-image: none;
+	margin-top: 24px;
 }
 .section-tartes .carousel .left i {
 	margin-left: -25px;
