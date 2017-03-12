@@ -34,7 +34,7 @@ $(document).on('scroll', function() {
     scroll_to_section_affiches("fast");
   }
 
-  var sections=['affiches', 'accroche', 'reservations', 'crowdfunding', 'association', 'presse', 'partenaires'];
+  var sections=['affiches', 'accroche', 'reservations', 'tartes', 'presse', 'crowdfunding', 'association', 'partenaires'];
 
   for (var i=sections.length-1; i>=0; i--)
   {
@@ -99,20 +99,25 @@ $(document).on('scroll', function() {
     $('html,body').animate({scrollTop: $('.section-reservations').offset().top
                                      - $('.navbar').height() },'slow');
   }
+  function scroll_to_section_tartes() { 
+    desarmer_animation_affiches();
+    $('html,body').animate({scrollTop: $('.section-tartes').offset().top
+                                     - $('.navbar').height() },'slow');
+  }
   function scroll_to_section_crowdfunding() {  
     desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-crowdfunding').offset().top
-                                     - $('.navbar').height() },'slow');
-  }
-  function scroll_to_section_association() {  
-    desarmer_animation_affiches();
-    $('html,body').animate({scrollTop: $('.section-association').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_presse() {  
     desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-presse').offset().top
                                      - $('.navbar').height()*1.5 },'slow');
+  }
+  function scroll_to_section_association() {  
+    desarmer_animation_affiches();
+    $('html,body').animate({scrollTop: $('.section-association').offset().top
+                                     - $('.navbar').height() },'slow');
   }
   function scroll_to_section_partenaires() {  
     desarmer_animation_affiches();
@@ -286,6 +291,23 @@ $(document).on('scroll', function() {
 
 
 
+<div class="section-tartes">
+  <div class="container text-center">
+    <div class="catchphrase">
+      <p>À vos tartes, amis des sciences !</p>
+	  <p class="content">La journée de pi est l'occasion de célébrer les mathématiques
+        et les sciences tout en dégustant de délicieuses tartes. Le <strong>concours
+        de tartes</strong> est un événement incontournable du π day&nbsp;!</p>
+	  <p class="content">Cette année, il
+		aura lieu à <strong>Lyon, le 19 mars au Transbordeur</strong>, à partir de
+		16h30, avant la représentation.</p>
+	  <p class="content">Qu'elles soient
+        <strong>salées ou sucrées</strong>, toutes les tartes sont acceptées pour
+        ce concours qui mêle plaisir gastronomique et sciences&nbsp;!</p>
+    </div>
+  </div>
+</div>
+
 
 <div class="section-crowdfunding">
   <div class="container">
@@ -300,7 +322,19 @@ $(document).on('scroll', function() {
   </div>
 </div>
 
-
+<div class="section-presse">
+  <div class="container text-center">
+    <div class="catchphrase">
+      <p>
+	Retrouvez toutes nos informations dans notre <strong>communiqué de presse</strong>&nbsp;:
+      </p>
+      <p>
+	<a href="/documents/communique-presse-tournee-pi/communique-presse-tournee-pi.pdf" style="margin-right:2em;"><i class="fa fa-file" aria-hidden="true"></i> ficher pdf</a>
+	<a href="/documents/communique-presse-tournee-pi.zip"><i class="fa fa-file-archive-o" aria-hidden="true"></i> archive <em>zip</em> multi-formats</a>
+      </p>
+    </div>
+  </div>
+</div>
 
 <div class="section-association" style="padding: 2em;">
   <div class="row text-left catchphrase">
@@ -327,20 +361,6 @@ $(document).on('scroll', function() {
 	<a href="https://www.youtube.com/channel/UCxDMMdKvE0Na8Pnr5SAJeJQ/"><i class="fa fa-youtube"></i> YouTube</a>
 	et n'hésitez-pas à nous écrire à l'adresse <a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a>&nbsp;!
       </h4>
-    </div>
-  </div>
-</div>
-
-<div class="section-presse">
-  <div class="container text-center">
-    <div class="catchphrase">
-      <p>
-	Retrouvez toutes nos informations dans notre <strong>communiqué de presse</strong>&nbsp;:
-      </p>
-      <p>
-	<a href="/documents/communique-presse-tournee-pi/communique-presse-tournee-pi.pdf" style="margin-right:2em;"><i class="fa fa-file" aria-hidden="true"></i> ficher pdf</a>
-	<a href="/documents/communique-presse-tournee-pi.zip"><i class="fa fa-file-archive-o" aria-hidden="true"></i> archive <em>zip</em> multi-formats</a>
-      </p>
     </div>
   </div>
 </div>
@@ -460,11 +480,12 @@ Berardini et Lionel Marty)</span></li>
 <script>
 window.onload = function () { 
 if (target_section == "affiches") { scroll_to_section_affiches(); }
-else if (target_section == "reservations") { scroll_to_section_reservations(); }
 else if (target_section == "accroche") { scroll_to_section_accroche(); }
+else if (target_section == "reservations") { scroll_to_section_reservations(); }
+else if (target_section == "accroche") { scroll_to_section_tartes(); }
 else if (target_section == "crowdfunding") { scroll_to_section_crowdfunding(); }
-else if (target_section == "association") { scroll_to_section_association(); }
 else if (target_section == "presse") { scroll_to_section_presse(); }
+else if (target_section == "association") { scroll_to_section_association(); }
 else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
 }
 </script>
