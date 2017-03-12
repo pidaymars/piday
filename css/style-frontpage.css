@@ -276,6 +276,9 @@ div.section-accroche .affiches {
 .section-tartes {
     clear: both;
 }
+.section-tartes .carousel img {
+	height: 300px;
+}
 
 
 .section-crowdfunding {

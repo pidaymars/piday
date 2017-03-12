@@ -303,26 +303,27 @@ $(document).on('scroll', function() {
 	  <p class="content">Qu'elles soient
         <strong>salées ou sucrées</strong>, toutes les tartes sont acceptées pour
         ce concours qui mêle plaisir gastronomique et sciences&nbsp;!</p>
-    </div>
-  </div>
-  
-  <div id="carousel-tartes" class="carousel">
-    <div class="carousel-inner">
-    {% for tarte in site.data.tartes-carousel %}
-      {% if forloop.index0 == 0 %}
-      <div class="item active" title="{{ tarte.name }}">
-      {% else %}
-      <div class="item" title="{{ tarte.name }}">
-      {% endif %}
-        <img class="img-responsive thumbnail thumbnail-tartes" src="{{ '/images/tartes-carousel/' | append: tarte.id | append: '.jpg' }}" alt="{{tarte.name}}">
+		  
+      <div id="carousel-tartes" class="carousel">
+      <div class="carousel-inner">
+        {% for tarte in site.data.tartes-carousel %}
+          {% if forloop.index0 == 0 %}
+          <div class="item active" title="{{ tarte.name }}">
+          {% else %}
+          <div class="item" title="{{ tarte.name }}">
+          {% endif %}
+            <p>{{ tarte.name }}</p>
+            <img class="img-responsive thumbnail thumbnail-tartes" src="{{ '/images/tartes-carousel/' | append: tarte.id | append: '.jpg' }}" alt="{{tarte.name}}">
+          </div>
+        {% endfor %}
+        </div>
+        <a class="carousel-control left" href="#carousel-tartes" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="carousel-control right" href="#carousel-tartes" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
-    {% endfor %}
-    </div>
-    <a class="carousel-control left" href="#carousel-tartes" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-    <a class="carousel-control right" href="#carousel-tartes" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+		
     </div>
   </div>
-  
 </div>
 
 
@@ -512,4 +513,10 @@ else if (target_section == "presse") { scroll_to_section_presse(); }
 else if (target_section == "association") { scroll_to_section_association(); }
 else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
 }
+
+
+$('#carousel-tartes').carousel({
+  pause: true,
+  interval: false
+});
 </script>
