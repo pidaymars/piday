@@ -19,7 +19,7 @@
   website: http://www.agence-nationale-recherche.fr/investissementsdavenir/
   acronym: ANR
 - filename: amidex.png
-  name: Fondation AMU
+  name: Fondation Aix-Marseille Université
   website: http://fondation.univ-amu.fr/
   acronym: FondationAMU
 - filename: fsdie.png
@@ -34,7 +34,7 @@
   website: https://www.fondation-hadamard.fr/
   acronym: FMJH
 - filename: univ-lyon1.png
-  name: Université de Lyon 1
+  name: Université Claude Bernard Lyon 1
   website: http://www.univ-lyon1.fr/
   acronym: Université Claude Bernard Lyon 1
 - filename: i2m.png
@@ -45,22 +45,26 @@
   name: LabEx Archimède
   website: http://labex-archimede.univ-amu.fr
   acronym: LabEx-Archimède
-- filename: labex-bezout.jpg
-  name: LabEx Bézout
-  website: http://bezout.univ-paris-est.fr/en
-  acronym: LabEx-Bézout
 - filename: ens-paris.png
   name: Département de Mathémathiques et Applications -École Normale Supérieure Paris
   website: http://bezout.univ-paris-est.fr/en
   acronym: DMA ENS Paris
+- filename: labex-bezout.jpg
+  name: LabEx Bézout
+  website: http://bezout.univ-paris-est.fr/en
+  acronym: LabEx-Bézout
+- filename: umpa.png
+  name: Unité de Mathématiques Pures et Appliquées
+  website: http://www.umpa.ens-lyon.fr/
+  acronym: UMPA  
+- filename: centrale-marseille.png
+  name: Centrale Marseille
+  website: https://www.centrale-marseille.fr/
+  acronym: UMPA    
 - filename: lif.gif
   name: Laboratoire d'Informatique Fondamentale de Marseille
   website: http://www.lif.univ-mrs.fr
   acronym: LIF
-- filename: umpa.png
-  name: Unité de Mathématiques Pures et Appliquées
-  website: http://www.umpa.ens-lyon.fr/
-  acronym: UMPA
 - filename: lip.png
   name: Laboratoire de l'Informatique du Parallélisme
   website: http://www.ens-lyon.fr/LIP/
@@ -116,10 +120,17 @@
   name: Institut Camille Jordan
   website: http://math.univ-lyon1.fr/
   acronym: ICJ
+- filename: region.png
+  name: Région PACA
+  website: http://www.regionpaca.fr/
+  acronym: PACA 
+- filename: sciencePACA.png
+  name: Culture Science PACA
+  website: http://www.culture-science-paca.org/
+  acronym: CSPACA   
 - filename: marseille.jpg
   name: Ville de Marseille
   website: http://www.marseille.fr
-
 
 
 
