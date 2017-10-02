@@ -4,7 +4,7 @@
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 {% if page.redirect %}
 {% if page.redirect_wait %}
-<meta http-equiv="refresh" content="{{ redirect_wait }}; url={{ page.redirect }}">
+<meta http-equiv="refresh" content="{{ page.redirect_wait }}; url={{ page.redirect }}">
 {% else %}
 <meta http-equiv="refresh" content="0; url={{ page.redirect }}">
 {% endif %}
