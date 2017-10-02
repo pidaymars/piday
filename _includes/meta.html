@@ -2,8 +2,12 @@
 <meta name="viewport" content="user-scalable = no, width=device-width, initial-scale=1">
 
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-{% if page.title == "404" %}
-<meta http-equiv="refresh" content="3; url=/">
+{% if page.redirect %}
+{% if page.redirect_wait %}
+<meta http-equiv="refresh" content="{{ redirect_wait }}; url={{ redirect }}">
+{% else %}
+<meta http-equiv="refresh" content="0; url={{ redirect }}">
+{% endif %}
 {% endif %}
 
 <!-- Open Graph data -->
