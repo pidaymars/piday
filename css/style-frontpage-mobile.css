@@ -183,6 +183,29 @@ a {
 	
 }
 
+.a-la-prochaine{
+	width: 120vw;
+
+    position: absolute;
+    top: 50vh;
+    left: -6vh;
+
+    text-align: center;
+    line-height: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 4vh;
+    color: white;
+
+    position: fixed;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+	background: #2c7;
+
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    z-index:6;
+}
+
 /* The ribbons */
 .corner-ribbon{
   width: 30vh;
