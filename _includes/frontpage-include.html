@@ -21,12 +21,13 @@
   var navbar_on = false;
   var target_section = "{{ page.section }}";
 
-
+/*
   function first_scroll() {
   $(window).off('scroll');
   $('.navbar').slideDown("slow", function() { 
   $('.corner-ribbon').css({'top': '95px'}); });
   }
+ */
   
 $(document).on('scroll', function() {
   /*if(!animation_affiches_montree && $(this).scrollTop()>=$('.section-affiches').position().top-2*$('.navbar').height()){
@@ -70,6 +71,7 @@ $(document).on('scroll', function() {
 
 });
 
+/*
   function scroll_to_section_affiches(duration) {
     desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-affiches').offset().top - $('.navbar').height() },
@@ -88,40 +90,40 @@ $(document).on('scroll', function() {
   function desarmer_animation_affiches() {
     animation_affiches_montree = true;
     $('#invite-scroll').fadeOut('fast');
-  }
+  }*/
     
   function scroll_to_section_accroche() {  
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-accroche').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_reservations() { 
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-reservations').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_tartes() { 
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-tartes').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_crowdfunding() {  
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-crowdfunding').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_presse() {  
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-presse').offset().top
                                      - $('.navbar').height()*1.5 },'slow');
   }
   function scroll_to_section_association() {  
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-association').offset().top
                                      - $('.navbar').height() },'slow');
   }
   function scroll_to_section_partenaires() {  
-    desarmer_animation_affiches();
+    //desarmer_animation_affiches();
     $('html,body').animate({scrollTop: $('.section-partenaires').offset().top
                                      - $('.navbar').height() },'slow');
   }
@@ -138,7 +140,7 @@ $(document).on('scroll', function() {
 <div class="corner-ribbon top-right sticky green shadow hidden">Soutenez-nous&nbsp;!</div>
 </a>
 
-<div class="frontpage-poster" onclick="scroll_to_section_affiches('slow')" title="Illustration de Sam Chivers"></div>
+<div class="frontpage-poster" onclick="scroll_to_section_tartes('slow')" title="Illustration de Sam Chivers"></div>
 
 {% if false %}
 <div class="text-center">
