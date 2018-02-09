@@ -21,6 +21,7 @@
   var navbar_on = false;
   var target_section = "{{ page.section }}";
 
+
   function first_scroll() {
   $(window).off('scroll');
   $('.navbar').slideDown("slow", function() { 
@@ -28,13 +29,13 @@
   }
   
 $(document).on('scroll', function() {
-  if(!animation_affiches_montree && $(this).scrollTop()>=$('.section-affiches').position().top-2*$('.navbar').height()){
+  /*if(!animation_affiches_montree && $(this).scrollTop()>=$('.section-affiches').position().top-2*$('.navbar').height()){
     $(window).on('DOMMouseScroll mousewheel', function(e) { e.preventDefault(); e.stopPropagation(); });
     window.setTimeout(function() { $(window).off('DOMMouseScroll mousewheel'); }, 1000);
     scroll_to_section_affiches("fast");
-  }
+  }*/
 
-  var sections=['affiches', 'accroche', 'reservations', 'tartes', 'crowdfunding', 'presse', 'association', 'partenaires'];
+  var sections=[/*'affiches', 'accroche', 'reservations',*/ 'tartes', /*'crowdfunding',*/ 'presse', 'association', 'partenaires'];
 
   for (var i=sections.length-1; i>=0; i--)
   {
@@ -56,12 +57,12 @@ $(document).on('scroll', function() {
      { $('#lien-' + sections[i]).removeClass('section-active'); }
   }
 
-  if (navbar_on && $(this).scrollTop() == 0) {
+  if (navbar_on && $(this).scrollTop() <= 50) {
     navbar_on = false;
     $('.corner-ribbon').css({'top': ''});
     $('.navbar').slideUp("slow");
   }
-  if (!navbar_on && $(this).scrollTop() > 0) {
+  if (!navbar_on && $(this).scrollTop() > 50) {
     navbar_on = true;
     $('.navbar').slideDown("slow");
     $('.corner-ribbon').css({'top': '95px'});
@@ -134,16 +135,17 @@ $(document).on('scroll', function() {
 </script>
 
 <a class="corner-ribbon-link"  href="https://www.indiegogo.com/projects/tournee-de-pi-science-musical">
-<div class="corner-ribbon top-right sticky green shadow">Soutenez-nous&nbsp;!</div>
+<div class="corner-ribbon top-right sticky green shadow hidden">Soutenez-nous&nbsp;!</div>
 </a>
 
 <div class="frontpage-poster" onclick="scroll_to_section_affiches('slow')" title="Illustration de Sam Chivers"></div>
 
+{% if false %}
 <div class="text-center">
 <span class="glyphicon glyphicon-chevron-down" id="invite-scroll" onclick="scroll_to_section_affiches('slow')"></span>
 </div>
 
-<div class="container row text-center center section-affiches">
+<div class="container row text-center center section-affiches hidden">
   <div class="affiches">
     <!-- Les dimensions des trois affiches doivent etre proportionnelles à 1000x1239 (en gros) -->
     <div class="box affiche-marseille-container affiche-container">
@@ -209,7 +211,7 @@ $(document).on('scroll', function() {
   </div>
 </div>
 
-<div class="section-accroche">
+<div class="section-accroche hidden">
   <div class="col-sm-12" style="padding-left:4em; padding-right: 4em; "> <!-- :-/ -->
     <div class="catchphrase text-center">
       <p>Voyage en musique au pays du hasard et des mathématiques&nbsp;: du 14 au 19 mars, l'<strong><a href="#" onclick="scroll_to_section_association()">association Pi Day</a></strong> vous invite à Paris, Marseille et Lyon pour partager la plus irrationnelle des soirées musicales&nbsp;!</p>
@@ -289,29 +291,13 @@ $(document).on('scroll', function() {
   </div>
 </div>
 
-
+{% endif %}
 
 <div class="section-tartes" style="padding-top:5em">
   <div class="container text-center">
     <div class="catchphrase">
-      <p>À vos tartes, amis des sciences !</p>
-      <p class="content">La journée de pi est l'occasion de célébrer les mathématiques
-        et les sciences tout en dégustant de délicieuses tartes. Le <strong>concours
-          de tartes</strong> est un événement incontournable du π day&nbsp;!</p>
-
-      <p class="content">Tartes <strong>salées</strong>, <strong>sucrées</strong>
-      et expériences culinaires baroques sont toutes les bienvenues.</p>
-	  
-      <p class="content">Cette année, il a eu lieu à Lyon, le 19 mars
-      au Transbordeur. Des lots fantastiques (tels que des livres,
-      t-shirts et accessoires de pâtisserie) attendaient tous les
-      participants à ce concours qui a melé plaisir gastronomique et
-      sciences&nbsp;!</p>
-
-      <p>Retrouvez bientot toutes les photos et les résultats ! En
-      attendant, vous pouvez admirer quelques unes des plus belles
-      tartes du pi day 2016&nbsp;:</p>
-		  
+      <h1>Rendez-vous le 14 mars 2019 pour la prochaine édition de la tournée de π&nbsp;!</h1>
+	  <p>En attendant, régalez-vous avec les tartes des éditions précédentes&nbsp;:</p>
       <div id="carousel-tartes" class="carousel slide"  data-interval="false">
       <div class="carousel-inner">
         {% for tarte in site.data.tartes-carousel %}
@@ -334,6 +320,7 @@ $(document).on('scroll', function() {
   </div>
 </div>
 
+{% if false %}
 
 <div class="section-crowdfunding" style="margin-top:3em">
   <div class="container">
@@ -348,6 +335,8 @@ $(document).on('scroll', function() {
   </div>
 </div>
 
+{% endif %}
+
 <div class="section-presse" style="margin-top:5em; margin-bottom:4em;">
   <div class="container text-center">
     <div class="catchphrase">
@@ -361,27 +350,27 @@ $(document).on('scroll', function() {
     </div>
   </div>
 </div>
-
 <div class="section-association" style="padding: 2em;">
   <div class="row text-left catchphrase">
     <div class="col-sm-12">
       <img src="/images/logo-geometrique.png" class="pull-left gap-right" style="width:10em; margin-right:1em; margin-bottom: 5em;">
-      <h4>
-      <p>Nous sommes une association composée de doctorantes, doctorants, jeunes chercheuses et jeunes chercheurs en mathématiques de Lyon, Marseille et Paris, rassemblés autour d'un grand projet de partage des mathématiques. Nous organisons depuis 2013 de nombreux événements de diffusion scientifique grand public à titre bénévole, dont la Journée de π tous les 14 mars (qui devient cette année la Tournée de π)&nbsp;! </p>
+      
+      <p>Nous sommes une association composée de doctorantes, doctorants, jeunes chercheuses et jeunes chercheurs en mathématiques de Lyon, Marseille et Paris, rassemblés autour d'un grand projet de partage des mathématiques. Depuis 2013, nous organisons à titre bénévole de nombreux événements de diffusion scientifique grand public, dont la Tournée de π. </p>
       
       <p>Pour l’originalité, l’ampleur et la réussite de ses activités, l’association a reçu en 2016 le <a href="http://smf.emath.fr/VieSociete/PrixAlembert/Laureats.html">Prix d’Alembert</a> de la Société de Mathématiques de France (SMF), récompensant les initiatives de diffusion mathématique auprès du grand public.</p>
 
-      <p>Revivez en vidéo les moments forts du spectacle du Pi Day 2016 au Théatre national de la Criée&nbsp;!</p>
-	  
-	  <p>Le bureau de l'association est composé de&nbsp;:</p>
+	  <p>L'association est dirigée par&nbsp;:</p>
 	  <ul  class="list-unstyled">
-		<li>Guillaume Geoffroy (président)</li>
-	    <li>Joël Cohen (vice-président)</li>
-		<li>Annamaria Iezzi (secrétaire)</li>
-	    <li>Elena Berardini (trésorière)</li>
-		<li>Émilie Delnieppe (respo com')</li>
+		<li>Joël Cohen (président)</li>
+	    <li>Guillaume Geoffroy (vice-président)</li>
+		<li>Juliette Chevallier (trésorière)</li>
+		<li>Martin Averseng (secrétaire)</li>
+		<!-- TODO ><li>Annamaria Iezzi (membre du CA)</li>
+	    <li>Elena Berardini (membre du CA)</li> -->
 	  </ul>
 
+      <p>Revivez en vidéo les moments forts du spectacle du Pi Day 2016 au Théatre national de la Criée&nbsp;!</p>
+	  
       <div class="embed-responsive embed-responsive-16by9 center-block embedded-youtube"
 	   style="margin-top: 2em; margin-bottom: 2em">
 	<iframe class="embed-responsive-item" style="max-width:569px; max-height:320px;" src="https://www.youtube.com/embed/1DOI-a-1_4o?list=PLHn5WCTrhnZVDscCsuEZPA0rHt6IYXEbk"></iframe>
@@ -393,7 +382,7 @@ $(document).on('scroll', function() {
         <a href="https://www.instagram.com/pidayasso/"><i class="fa fa-instagram"></i> Instagram</a> et
 	<a href="https://www.youtube.com/channel/UCxDMMdKvE0Na8Pnr5SAJeJQ/"><i class="fa fa-youtube"></i> YouTube</a>
 	et n'hésitez-pas à nous écrire à l'adresse <a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a>&nbsp;!
-      </h4>
+      
     </div>
   </div>
 </div>
@@ -401,7 +390,7 @@ $(document).on('scroll', function() {
 <div class="section-credits" style="margin-top: 4em;">
   <div class="container text-center">
   <div class="catchphrase">
-    Crédits
+    Crédits tournée de π 2017
   </div>
   </div>
   <div class="container text-left">
@@ -421,7 +410,7 @@ Velleret</span></li>
 	  <li>Équipe lyonnaise : <span class="weak">Gwladys Fernandes, Régis Goiffon, Chih-Kang Huang, Valentin Seigneur, Carine Seraphim, Coline Wiatrowski</span></li>
 	</ul>
 	
-	<p>Création de la comédie musicale :</p>
+	<p>Création de la comédie musicale <span class="titre-comedie">From <span style="color: rgba(117, 10, 24, 1);">Marseille</span> to  <span style="color: black;">Vegas</span></span>&nbsp;:</p>
     <ul>
       <li>Écriture : <span class="weak">Joël Cohen, Guillaume Geoffroy (avec l’aide d’Elena
 Berardini et Lionel Marty)</span></li>
@@ -522,7 +511,7 @@ else if (target_section == "association") { scroll_to_section_association(); }
 else if (target_section == "partenaires") { scroll_to_section_partenaires(); }
 }
 
-$.fn.carousel.defaults = {
+/*$.fn.carousel.defaults = {
     interval: false, pause: true
-  }
+  }*/
 </script>
