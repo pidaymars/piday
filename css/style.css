@@ -15,8 +15,11 @@
 body {
     background-color: #fff;
     font-family: 'Helvetica Neue', Helvetica, 'Open Sans';
+	font-weight: 200;
     padding: 0;
 }
+body strong { font-weight: 400; }
+
 html, body {
   overflow-x: hidden;
 }
@@ -24,8 +27,6 @@ html, body {
 .catchphrase {
   color: #444444;
   font-size: 24px;
-  font-weight: 300;
-  letter-spacing: 1px;
   margin : 1em 0;
 }
 .catchphrase h4 {
