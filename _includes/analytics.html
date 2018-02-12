@@ -9,7 +9,7 @@
   var random_element_list = function (list) {
     return list[Math.floor((Math.random()*list.length))]; } 
   
-  if (device == "desktop")  {
+  if ((typeof device !== "undefined") && device == "desktop")  {
    var corner_ribbon_label = random_element_list(["Soutenez-nous !", "Soutenez la tournée !", "Helπ us !"]);
   
   var trackOutboundLink = function(url, category, label) {
