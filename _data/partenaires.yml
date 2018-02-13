@@ -127,7 +127,11 @@
 #- filename: sciencePACA.png
 #  name: Culture Science PACA
 #  website: http://www.culture-science-paca.org/
-#  acronym: CSPACA   
+#  acronym: CSPACA
+- filename: cg13.png
+  name: Département des Bouches-du-Rhône
+  website: http://www.departement13.fr/
+  acronym: CG13 
 - filename: marseille.jpg
   name: Ville de Marseille
   website: http://www.marseille.fr
