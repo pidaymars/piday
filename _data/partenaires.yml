@@ -124,10 +124,10 @@
 #  name: Région PACA
 #  website: http://www.regionpaca.fr/
 #  acronym: PACA 
-- filename: sciencePACA.png
-  name: Culture Science PACA
-  website: http://www.culture-science-paca.org/
-  acronym: CSPACA   
+#- filename: sciencePACA.png
+#  name: Culture Science PACA
+#  website: http://www.culture-science-paca.org/
+#  acronym: CSPACA   
 - filename: marseille.jpg
   name: Ville de Marseille
   website: http://www.marseille.fr
