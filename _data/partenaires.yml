@@ -120,10 +120,10 @@
   name: Institut Camille Jordan
   website: http://math.univ-lyon1.fr/
   acronym: ICJ
-- filename: region.png
-  name: Région PACA
-  website: http://www.regionpaca.fr/
-  acronym: PACA 
+#- filename: region.png
+#  name: Région PACA
+#  website: http://www.regionpaca.fr/
+#  acronym: PACA 
 - filename: sciencePACA.png
   name: Culture Science PACA
   website: http://www.culture-science-paca.org/
