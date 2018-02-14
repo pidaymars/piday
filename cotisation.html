@@ -5,11 +5,18 @@ permalink: /cotisation
 device: desktop
 ---
 <div class="catchphrase text-center" style="margin-top:10em;margin-bottom:8em;">
-	Régler par PayPal ma cotisation à l'association Pi Day pour l'année 2018 (3,14&nbsp;&euro;)&nbsp;:
+	Régler par PayPal ma cotisation à l'association Pi Day pour l'année 2018&nbsp;:
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: inline-block;">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="VURXBN93UL596">
-<input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+<input type="hidden" name="on0" value="Montant de la cotisation"><select name="os0">
+	<option value="A">3,14&nbsp;&euro;</option>
+	<option value="B">5,00&nbsp;&euro;</option>
+	<option value="C">10,00&nbsp;&euro;</option>
+	<option value="D">31,40&nbsp;&euro;</option>
+</select>
+<input type="hidden" name="currency_code" value="EUR">
+<input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
 <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 </form>
 </div>
