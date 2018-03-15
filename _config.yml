@@ -1,11 +1,9 @@
 markdown: redcarpet
 # Site settings
-title: Pi Day - La journée de Pi
+title: Pi Day - La tournée de Pi
 email: contact@piday.fr
-#description: > # this means to ignore newlines until "baseurl:"
-#  Site officiel de la tournée de Pi à Paris, Marseille et Lyon. Retrouvez toutes les informations utiles sur cette soirée musicale mathématique totalement transcendante !
 description: > # this means to ignore newlines until "baseurl:"
-  Rendez-vous le 14 mars pour fêter les maths et manger des tartes !
+  Site officiel de la tournée de Pi. Retrouvez toutes les informations utiles sur cette tournée musicale mathématique totalement transcendante !
 baseurl: ""
 #url: "http://www.piday.fr" # the base hostname & protocol for your site
 
