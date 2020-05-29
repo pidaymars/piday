@@ -1,0 +1,122 @@
+html {
+   font-family : 'Helvetica-Neue', Helvetica, sans-serif;
+   color : #000;
+   font-size : 110%;
+   background-color :#689;
+   width : 100%;
+}
+.main {
+   background-color : #fff;
+   width : 45em;
+   max-width : 85%;
+   padding : 4em 2em;
+   border-radius : 1em;
+   margin : 1em auto;
+   box-shadow: .1em .1em .2em rgba(0,0,0,0.2);
+}
+h1 {
+    display : block;
+    width : 100%;
+    font-family: 'Chelsea Market', cursive;
+    text-align : center;
+    font-size : 3em;
+    letter-spacing : -.05em;
+    font-weight : 900;
+}
+h2 {
+    color : #666;
+    font-weight : 300;
+}
+p {
+    line-height : 1.6em;
+    margin-top : 2em;
+}
+ul {
+    display : block;
+    background-color : #eea;
+    font-family : 'Sue Ellen Francisco', cursive;
+    font-size : 1.5em;
+    color : #444;
+    border-radius : 1em;
+    padding : 2em;
+    width : 20em;
+    max-width : 80%;
+    margin : 1.5em auto;
+    background-image: linear-gradient(180deg, #cccc19 1.67%, #f5f5a6 1.67%, #f5f5a6 50%, #cccc19 50%, #cccc19 51.67%, #f5f5a6 51.67%, #f5f5a6 100%);
+    background-size: 3.5em 3.5em;
+    box-shadow: .05em .05em .4em rgba(0,0,0,0.2);
+}
+li {
+    counter-increment: li-count;
+    display : block;
+    line-height : 1.5em;
+}
+li::before{
+    content : "Témoin " counter(li-count) " : " ;
+    font-weight : bold;
+}
+
+li + li {
+    margin-top : 1em;
+}
+
+td {
+   text-align : center;
+   width : 6em;
+   margin : 1em;
+}
+td + td {
+    margin-left : 1em;
+}
+tr {
+   margin : 1em;
+}
+img {
+   max-width: 90%;
+   margin : 0;
+}
+table {
+   display : table;
+   margin : 0;
+   border-collapse: separate;
+   border-spacing: 1em;
+}
+.name {
+   text-align : center;
+   margin : 0;
+   padding : .1em;
+   background-color: #fff;
+   color : #000;
+   border : solid 2px #000;
+   border-radius : .3em;
+}
+.question {
+    text-align : center;
+    font-size : 1.2em;
+    font-weight : bold;
+    margin-bottom : 3em;
+}
+.answer {
+    float : center;
+    background-color : #3ac;
+    text-decoration : none;
+    font-size : 150%;
+    color : #fff;
+    padding : .6em 1.2em;
+    border-radius : .7em;
+    box-shadow: .1em .1em .2em rgba(0,0,0,0.2);
+}
+.answer:hover {
+    background-color : #4bd;
+}
+.answer:active {
+    background-color : #39b;
+    box-shadow: .05em .05em .2em rgba(0,0,0,0.2);
+}
+footer {
+    font-size : .8em;
+    margin : 1em 0;
+    text-align : center;
+    font-weight : lighter;
+    color : #345;
+}
