@@ -43,9 +43,24 @@ body * {
   cursor: pointer;
 }
 
+.ball .strip {
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-color: white;
+  clip-path: inset(28px 0);
+  position: absolute;
+  top: -28px;
+  left: -28px;
+}
+
 .ball span {
   display: inline-block;
   transform: translate(0px, -2px);
+}
+.ball .strip span {
+  transform: translate(0px, 25px);
 }
 
 .cue-ball {

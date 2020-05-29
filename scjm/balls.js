@@ -442,9 +442,14 @@ function create_balls() {
     for (var i = 1; i <= 12; i++) {
         var ball = document.createElement("div");
         ball.classList.add("ball");
+        var div = document.createElement("div");
+        ball.appendChild(div);
+        if (i>8) {
+            div.classList.add("strip");
+        }
         var span = document.createElement("span");
         span.innerText = i;
-        ball.appendChild(span);
+        div.appendChild(span);
         ball.style['border-color'] = ball_color(i);        
         balls.push(ball);
     }
