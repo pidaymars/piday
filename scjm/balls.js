@@ -294,6 +294,8 @@ function reset_state(state) {
     state.interf = new_interface();
     state.trace = "";
 
+    place_balls(state);
+    
     return state;    
 }
 
@@ -304,7 +306,6 @@ function new_state() {
         balls: create_balls(),
         trace: null
     };
-    reset_state(state);
 
     for (var i = 1; i <= 12; i++) {
         let j = i;
@@ -386,6 +387,7 @@ function new_state() {
     //document.getElementById("moves").addEventListener("click", measure_click);
     document.getElementById("measure-button").addEventListener("click", measure_click);
 
+    reset_state(state);
     return state;
  }
 
@@ -398,7 +400,7 @@ function place_remaining_moves(state) {
     html += '</span>';
     for (var i=max_moves-state.game.remaining_moves; i<max_moves; i++) {
         html += "&#9878;"
-        if (i < max_moves-1) { html += " "; }
+        if (i < max_moves-1) { html += "&nbsp;"; }
     }
     document.getElementById("moves").innerHTML = html;
 }
@@ -562,10 +564,22 @@ function place_balls(state) {
             document.getElementById("cue-ball").style.display = null;;
         }
     } else {
-        document.getElementById("measure-button").innerText = "Reset";
+        document.getElementById("measure-button").innerText = "Rejouer";
     }
 }
 
 state = new_state();
 
-place_balls(state);
+// Handle window resize
+
+function window_resize() {
+    var scale = Math.min(window.innerHeight/(693+20), 1);
+    
+    document.getElementById("board").style.transform = "scale(" + scale + ")";
+    document.getElementById("board").style['transform-origin'] = "top left";
+    document.getElementById("board").style.width = 900*scale;
+    document.getElementById("board").style.height = 693*scale;
+}
+
+window.addEventListener("resize", window_resize);
+window_resize();
