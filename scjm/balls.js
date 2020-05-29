@@ -289,13 +289,23 @@ function register_answer(state, number, heavier) {
 
 /* ==== GUI ==== */
 
+function reset_state(state) {
+    state.game = new_game();
+    state.interf = new_interface();
+    state.trace = "";
+
+    return state;    
+}
+
 function new_state() {
     var state = {
-        game: new_game(),
-        interf: new_interface(),
+        game: null,
+        interf: null,
         balls: create_balls(),
-        trace: ""
+        trace: null
     };
+    reset_state(state);
+
     for (var i = 1; i <= 12; i++) {
         let j = i;
         state.balls[i-1].addEventListener("click", function (event) {
@@ -304,7 +314,15 @@ function new_state() {
     }
 
     var measure_click = function (event) {
-        if (state.interf.over) { return; }
+        if (state.interf.over) {
+            document.getElementById("result-block").innerText = "";
+            reset_state(state);
+            place_balls(state);
+            place_plates_down();
+            place_remaining_moves(state)
+            console.log(state);
+            return;
+        }
         
         if (state.game.remaining_moves > 0) {
             if (state.interf.measuring) {
@@ -368,8 +386,8 @@ function new_state() {
     //document.getElementById("moves").addEventListener("click", measure_click);
     document.getElementById("measure-button").addEventListener("click", measure_click);
 
-    return state;    
-}
+    return state;
+ }
 
 function place_remaining_moves(state) {
     html = '<span style="color: #C0C0C0">';
@@ -443,6 +461,8 @@ function create_balls() {
 }
 
 function ball_click(state, element, number) {
+    console.log(state);
+    
     if (state.interf.over) { return; }
     
     if (state.game.remaining_moves > 0) {
@@ -497,8 +517,10 @@ function place_balls(state) {
         ball.style.top = next_y;
         ball.style.left = next_x;
         next_x += ball_width;
-
-        
+        if (i % 6 == 5) {
+            next_x = 0;
+            next_y += ball_height;
+        }        
     }
     [ {balls: state.interf.left_plate,
        element: document.getElementById("left_plate")},
@@ -526,7 +548,7 @@ function place_balls(state) {
         }
     } else if (!state.interf.answering) {
         document.getElementById("measure-button").innerText = "Proposer réponse";
-    } else {
+    } else if (!state.interf.over) {
         document.getElementById("measure-button").innerText = "Valider réponse";
         document.getElementById("answer-block").style.visibility = "visible";
         if (state.interf.answer_slot > 0) {
@@ -539,6 +561,8 @@ function place_balls(state) {
         } else {
             document.getElementById("cue-ball").style.display = null;;
         }
+    } else {
+        document.getElementById("measure-button").innerText = "Reset";
     }
 }
 
