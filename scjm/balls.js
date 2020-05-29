@@ -422,17 +422,17 @@ function ball_color(ball_number) {
     case 1:
     case 9: return "#D0D000"; // Yellow
     case 2:
-    case 10: return "#0020A0"; // Blue
+    case 10: return "#0020B0"; // Blue
     case 3:
-    case 11: return "#C00020"; // Red
+    case 11: return "#C80020"; // Red
     case 4:
-    case 12: return "#A00060"; // Purple
+    case 12: return "#402060"; // Purple
     case 5:
     case 13: return "#E07000"; // Orange
     case 6:
-    case 14: return "#00A020"; // Green
+    case 14: return "#008020"; // Green
     case 7:
-    case 15: return "#803000"; // Maroon
+    case 15: return "#900000"; // Dark red
     case 8: return "#000000"; // Black
     }
  }
