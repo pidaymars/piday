@@ -1,0 +1,70 @@
+---
+title: Chasse au trésor mathématique - Jour 2
+device : unknown
+permalink: /scjm/2
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Chasse au trésor mathématique - Jour 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chasse_au_tresor.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-59791230-1', 'auto');
+      ga('send', 'pageview');
+  
+      var random_element_list = function (list) {
+        return list[Math.floor((Math.random()*list.length))]; } 
+  
+      if ((typeof device !== "undefined") && device == "desktop")  {
+       var corner_ribbon_label = random_element_list(["Soutenez-nous !", "Soutenez la tournée !", "Helπ us !"]);
+  
+      var trackOutboundLink = function(url, category, label) {
+    	if (ga.q) { 
+    	window.location = url;
+    	}
+    	else { try {
+          ga('send', 'event', {
+            'eventCategory' : category,
+    	    'eventAction' : 'click',
+    	    'eventLabel' : label,
+            'transport' : 'beacon',
+            'hitCallback' : 
+    		function(){
+    		window.location = url;
+    		}});
+        }
+    	catch(err) { window.location = url; }}
+      }
+  
+      var eventbrite_url = $(".corner-ribbon-link").attr("href");
+      $(".corner-ribbon").html(corner_ribbon_label);
+      $(".corner-ribbon-link").on("click",
+        function() {
+          trackOutboundLink(eventbrite_url,
+    	                    "Clic indiegogo - desktop",
+                            corner_ribbon_label)});
+      $(".corner-ribbon-link").attr("href","#");
+      }
+     </script>
+</head>
+<body>
+    <div class="main">
+        <h1>Deux poids deux mesures</h1>
+        <p>
+            Vous disposez de 12 boules de billiards d'apparence identiques. Mais parmi ces 12 boules, l'une d'entre elles comporte est faussée et ne fait pas le même poids que les autres (vous ignorez si elle est plus lourde ou plus légère). Vous voudriez identifier cette boule anormale. Pour cela, vous disposez d'une balance à plateaux.
+        </p>
+        <p class="question">En seulement 3 pesées, identifiez la boule anormale, et déterminez si elle est plus lourde ou plus légère que les autres.</p>
+        <p>Utilisez la mini application ci-dessous pour réaliser vos pesées. Lorsque vous réussissez, vous obtenez un code à remplir dans le formulaire de réponse.</p>
+        <center><p><a href="https://forms.gle/LWNsuWNB75ugFDt2A" class="answer">Envoyez votre réponse</a></p></center>
+
+        <p>Rendez-vous demain (samedi 31 mai 2020) 18h (heure de Paris) sur <a href="https://youtu.be/yYC3W27BnqE">YouTube</a> pour la réponse et la dernière énigme !</p>
+    </div>
+    <footer>Association Pi Day</footer>
+</body>
+</html>
