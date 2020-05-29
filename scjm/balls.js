@@ -442,14 +442,17 @@ function create_balls() {
     for (var i = 1; i <= 12; i++) {
         var ball = document.createElement("div");
         ball.classList.add("ball");
-        var div = document.createElement("div");
-        ball.appendChild(div);
         if (i>8) {
-            div.classList.add("strip");
+            var strip_top = document.createElement("div");
+            ball.appendChild(strip_top);
+            strip_top.classList.add("strip-top");
+            var strip_bottom = document.createElement("div");
+            ball.appendChild(strip_bottom);
+            strip_bottom.classList.add("strip-bottom");
         }
         var span = document.createElement("span");
         span.innerText = i;
-        div.appendChild(span);
+        ball.appendChild(span);
         ball.style['border-color'] = ball_color(i);        
         balls.push(ball);
     }
