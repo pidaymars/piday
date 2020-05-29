@@ -1,0 +1,124 @@
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<style>
+body {
+  font-family: Helvetica
+}
+
+.ball {
+  width: 99px;
+  height: 99px;
+  border-radius: 50%;
+  border: 30px solid;
+  border-color: #C00020;
+  text-align: center;
+  line-height: 39px;
+  font-size: 30px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: Helvetica;
+  cursor: pointer;
+}
+
+.ball span {
+  display: inline-block;
+  transform: translate(0px, -2px);
+}
+
+.cue-ball {
+  border: 1px solid black;
+}
+
+.plate {
+  width: 300px;
+  height: 273.2px;
+  border-bottom: 10px solid black;
+}
+
+.fulcrum {
+  height: 0;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid black;
+}
+
+.scale {
+  width: 900px;
+  height: 433.2px;
+  border-bottom: 10px solid #808080;
+}
+
+.moves {
+  padding: 0px 5px 5px 5px;
+  font-size: 50px;
+  border: 1px solid black;
+  /*cursor: pointer;*/
+  color: #000000;
+  text-align: center;
+}
+.measure-block {
+}
+.measure-button {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #28a745;
+  color: white;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  padding: 7px 12px 7px 12px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.measure-button:hover {
+  background-color: #218838;
+}
+
+.answer-select {
+  margin-left: 20px;
+}
+</style>
+
+</head>
+<body>
+
+  <div id="board" class="board">
+
+    <div class="store", id="store" style="width=1200px; height: 100px; position: absolute; top: 50px; left: 50px"></div>
+
+    <div id="scale" class="scale" style="top: 200px; left: 0px; position:absolute">
+      
+      <div class="plate" id="left_plate" style="position: absolute; top: 150px; left: 50px"></div>
+      <div class="plate" id="right_plate" style="position: absolute; top: 150px; left: 550px"></div>
+    </div>
+
+    <table id="measure-block" style="top: 200px; left: 900px; position: absolute" class="measure-block">
+      <tr>
+      <td id="moves" class="moves">&#9878; &#9878; &#9878;</td>
+      <td><div id="measure-button" class="measure-button">Mesurer</div></td>
+      </tr>
+    </table>
+
+    <table id="answer-block" class="answer-block" style="top: 300px; left: 900px; position: absolute">
+      <tr>
+        <td><div id="answer-slot"><div id="cue-ball" class="ball cue-ball"></div></div></td>
+        <td><select id="answer-select" class="answer-select">
+            <option value="lighter">Plus légère</option>
+            <option value="heavier">Plus lourde</option>
+        </select></td>
+      </tr>
+    </table>
+
+    <div id="result-block" class="result-block" style="top: 450px; left: 900px; position: absolute">
+    </div>
+    
+  </div>
+
+<script src="balls.js"></script>
+  
+</body>
+</html>
