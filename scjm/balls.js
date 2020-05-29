@@ -16,17 +16,6 @@ const plates_delta = 50;
 
 const max_moves = 3;
 
-/*
-function shuffle(array) {
-    for (var i = array.length-1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i+1));
-        var tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
-    }
-}
-*/
-
 function all_possibilities() {
     var possibilities = new Set();
 
@@ -395,7 +384,7 @@ function place_remaining_moves(state) {
     html = '<span style="color: #C0C0C0">';
     for (var i=0; i<max_moves-state.game.remaining_moves; i++) {
         html += "&#9878;"
-        if (i < max_moves-1) { html += " "; }
+        if (i < max_moves-1) { html += "&nbsp"; }
     }
     html += '</span>';
     for (var i=max_moves-state.game.remaining_moves; i<max_moves; i++) {
@@ -544,14 +533,14 @@ function place_balls(state) {
     if (state.game.remaining_moves > 0) {
         document.getElementById("answer-block").style.visibility = "hidden";
         if (state.interf.measuring) {
-            document.getElementById("measure-button").innerText = "Stop mesure";
+            document.getElementById("measure-button").innerHTML = "Stop&nbsp;mesure";
         } else {
-            document.getElementById("measure-button").innerText = "Mesurer";
+            document.getElementById("measure-button").innerHTML = "Mesurer";
         }
     } else if (!state.interf.answering) {
-        document.getElementById("measure-button").innerText = "Proposer réponse";
+        document.getElementById("measure-button").innerHTML = "Proposer&nbsp;réponse";
     } else if (!state.interf.over) {
-        document.getElementById("measure-button").innerText = "Valider réponse";
+        document.getElementById("measure-button").innerHTML = "Valider&nbsp;réponse";
         document.getElementById("answer-block").style.visibility = "visible";
         if (state.interf.answer_slot > 0) {
             ball = state.balls[state.interf.answer_slot-1];
@@ -579,6 +568,12 @@ function window_resize() {
     document.getElementById("board").style['transform-origin'] = "top left";
     document.getElementById("board").style.width = 900*scale;
     document.getElementById("board").style.height = 693*scale;
+
+    document.getElementById("answer-slot").style.transform = "scale(" + scale + ")";
+    document.getElementById("answer-slot").style['transform-origin'] = "top left";
+    document.getElementById("answer-slot").style.width = 100*scale;
+    document.getElementById("answer-slot").style.height = 100*scale;
+
 }
 
 window.addEventListener("resize", window_resize);
