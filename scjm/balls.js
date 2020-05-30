@@ -109,13 +109,11 @@ function choose_outcome(possibilities, plates, first_round = null) {
     }
     
     if (first_round && first_round.over && possibilities.size == 24) {
-        console.log(outcomes);
         if (first_round.type == first_round_same_weight) {
             outcomes_tmp = outcomes.filter(outcome => outcome != same_weight);
         } else {
             outcomes_tmp = outcomes.filter(outcome => outcome == same_weight);
         }
-        console.log(outcomes_tmp)
         if (outcomes_tmp.length > 0) {
             outcomes = outcomes_tmp;
         }
@@ -128,7 +126,6 @@ function choose_outcome(possibilities, plates, first_round = null) {
         } else {
             first_round.type = first_round_different_weights;
         }
-        console.log(first_round.type)
     }
 
     return outcome;
@@ -415,10 +412,12 @@ function new_state() {
                     text += "Maintenant, deuxième manche&nbsp;!</span>";
                 }
             } else {
+                console.log(possibilities);
+                console.log(filtered_possibilities);
                 var oddball_index = Math.floor(Math.random() * filtered_possibilities.size);
                 var iter = filtered_possibilities.values();
                 var oddball;
-                for (var i = 0; i < oddball_index; i++) {
+                for (var i = 0; i <= oddball_index; i++) {
                     oddball = iter.next().value;
                 }
                 text = "<div>Réponse incorrecte&nbsp;: ";
