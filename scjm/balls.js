@@ -87,7 +87,7 @@ function observe(possibilities, plates, outcome) {
         }
     });
 
-    return filtered_possibilities;                        
+    return filtered_possibilities;
 }
 
 function choose_outcome(possibilities, plates, first_round = null) {
@@ -102,7 +102,9 @@ function choose_outcome(possibilities, plates, first_round = null) {
 
     outcomes_tmp = outcomes.filter(function(outcome) {
         var score = observe(possibilities, plates, outcome).size;
-        return (score >= possibilities.size/2);
+        return (score >= possibilities.size/2.88);
+        // Any move that divides by less than cubic_root(24) makes you lose,
+        // and 2.88 < cubic_root(24)
     });
     if (outcomes_tmp.length > 0) {
         outcomes = outcomes_tmp;
@@ -406,6 +408,8 @@ function new_state() {
                 if (state.first_round.over) {
                     state.second_round = { over: true, won: true };
                     text += "Clé&nbsp;: " + state.trace + "</span>";
+                    document.getElementById("answer-form-link").href = "https://docs.google.com/forms/d/e/1FAIpQLSecV-S386C40v0tD90btNxXrzJNG_9k5_yHnsGYrkDfskverg/viewform?entry.1752604776=" + state.trace
+                    document.getElementById("answer-form-link").style.visibility = "visible";
                 } else {
                     state.first_round.over = true;
                     state.first_round.won = true;
