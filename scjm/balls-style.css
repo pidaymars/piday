@@ -29,8 +29,8 @@ margin-bottom: 1.5em;
 }
 
 .balls-game .ball {
-  width: 99px;
-  height: 99px;
+  width: 98px;
+  height: 98px;
   border-radius: 50%;
   border: 30px solid;
   border-color: #C00020;
@@ -44,14 +44,16 @@ margin-bottom: 1.5em;
 }
 
 .balls-game .ball .strip-top, .ball .strip-bottom {
-  width: 93px;
-  height: 93px;
+  width: 98px;
+  height: 98px;
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: 2px solid;
+  border-color: inherit;
   background-color: white;
   position: absolute;
-  top: -27.5px;
-  left: -27.5px;
+  box-sizing: border-box;
+  top: -30px;
+  left: -30px;
 }
 .balls-game .ball .strip-top {
   clip-path: inset(0 0 75px 0);
