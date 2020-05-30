@@ -17,7 +17,7 @@ const plates_delta = 50;
 const max_moves = 3;
 
 const first_round_same_weight = 1;
-const first_round_different_weigths = 2;
+const first_round_different_weights = 2;
 
 function all_possibilities() {
     var possibilities = new Set();
@@ -108,20 +108,27 @@ function choose_outcome(possibilities, plates, first_round = null) {
         outcomes = outcomes_tmp;
     }
     
-    if (first_round && first_round.over && possibilities.size == 12) {
+    if (first_round && first_round.over && possibilities.size == 24) {
+        console.log(outcomes);
         if (first_round.type == first_round_same_weight) {
             outcomes_tmp = outcomes.filter(outcome => outcome != same_weight);
         } else {
             outcomes_tmp = outcomes.filter(outcome => outcome == same_weight);
         }
+        console.log(outcomes_tmp)
         if (outcomes_tmp.length > 0) {
             outcomes = outcomes_tmp;
         }
     }
 
     var outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
-    if (first_round && !first_round.over && possibilities.size == 12) {
-        frist_round.type = outcome;
+    if (first_round && !first_round.over && possibilities.size == 24) {
+        if (outcome == same_weight) {
+            first_round.type = first_round_same_weight;
+        } else {
+            first_round.type = first_round_different_weights;
+        }
+        console.log(first_round.type)
     }
 
     return outcome;
@@ -403,7 +410,8 @@ function new_state() {
                     state.second_round = { over: true, won: true };
                     text += "Clé&nbsp;: " + state.trace + "</span>";
                 } else {
-                    state.first_round = { over: true, won: true };
+                    state.first_round.over = true;
+                    state.first_round.won = true;
                     text += "Maintenant, deuxième manche&nbsp;!</span>";
                 }
             } else {
@@ -425,7 +433,8 @@ function new_state() {
                 if (state.first_round.over) {
                     state.second_round = { over: true, won: false };
                 } else {
-                    state.first_round = { over: true, won: false };
+                    state.first_round.over = true;
+                    state.first_round.won = false;
                 }
             }
             document.getElementById("result-block").innerHTML = text;
