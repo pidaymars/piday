@@ -16,6 +16,9 @@ const plates_delta = 50;
 
 const max_moves = 3;
 
+const first_round_same_weight = 1;
+const first_round_different_weigths = 2;
+
 function all_possibilities() {
     var possibilities = new Set();
 
@@ -87,33 +90,51 @@ function observe(possibilities, plates, outcome) {
     return filtered_possibilities;                        
 }
 
-function choose_outcome(possibilities, plates) {
+function choose_outcome(possibilities, plates, first_round = null) {
     var outcomes;
+    var outcomes_tmp;
 
-    outcomes = [left_heavier, right_heavier, same_weight];
-    outcomes = outcomes.filter(function(outcome) {
-        var score = observe(possibilities, plates, outcome).size;
-        return (score >= possibilities.size/2);
-    });
-    if (outcomes.length > 0) {
-        return outcomes[Math.floor(Math.random() * outcomes.length)];
-    }
-    
     outcomes = [left_heavier, right_heavier, same_weight];    
     outcomes = outcomes.filter(function(outcome) {
         var score = observe(possibilities, plates, outcome).size;
         return (score >= possibilities.size/4);
     });
-    return outcomes[Math.floor(Math.random() * outcomes.length)];
+
+    outcomes_tmp = outcomes.filter(function(outcome) {
+        var score = observe(possibilities, plates, outcome).size;
+        return (score >= possibilities.size/2);
+    });
+    if (outcomes_tmp.length > 0) {
+        outcomes = outcomes_tmp;
+    }
+    
+    if (first_round && first_round.over && possibilities.size == 12) {
+        if (first_round.type == first_round_same_weight) {
+            outcomes_tmp = outcomes.filter(outcome => outcome != same_weight);
+        } else {
+            outcomes_tmp = outcomes.filter(outcome => outcome == same_weight);
+        }
+        if (outcomes_tmp.length > 0) {
+            outcomes = outcomes_tmp;
+        }
+    }
+
+    var outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+    if (first_round && !first_round.over && possibilities.size == 12) {
+        frist_round.type = outcome;
+    }
+
+    return outcome;
 }
 
-function play(game, plates) {
+function play(game, plates,
+              first_round = null /* "Separation of concerns"? Never heard */) {
     if (game.remaining_moves <= 0) {
         return illegal_move;
     }
     game.remaining_moves--;
     
-    var outcome = choose_outcome(game.possibilities, plates);
+    var outcome = choose_outcome(game.possibilities, plates, first_round);
     game.possibilities = observe(game.possibilities, plates, outcome);
     return outcome;
 }
@@ -134,7 +155,7 @@ function new_interface() {
         measuring: false,
         answering: false,
         answer_slot: 0,
-        over: false
+        over: false,
     };
     return my_interface;
 }
@@ -293,18 +314,32 @@ function reset_state(state) {
     state.game = new_game();
     state.interf = new_interface();
     state.trace = "";
+    state.first_round = { over: false };
+    state.second_round = { over: false };
 
     place_balls(state);
     
     return state;    
 }
 
+function start_second_round(state, won) {
+    state.game = new_game();
+    state.interf = new_interface();
+
+    place_balls(state);
+    
+    return state;    
+}
+
+
 function new_state() {
     var state = {
         game: null,
         interf: null,
         balls: create_balls(),
-        trace: null
+        trace: null,
+        first_round: null,
+        second_round: null
     };
 
     for (var i = 1; i <= 12; i++) {
@@ -317,11 +352,14 @@ function new_state() {
     var measure_click = function (event) {
         if (state.interf.over) {
             document.getElementById("result-block").innerHTML = "";
-            reset_state(state);
+            if (state.first_round.over && state.first_round.won && !state.second_round.over) {
+                start_second_round(state);
+            } else {
+                reset_state(state);
+            }            
             place_balls(state);
             place_plates_down();
             place_remaining_moves(state)
-            console.log(state);
             return;
         }
         
@@ -332,7 +370,7 @@ function new_state() {
             } else {
                 var plates = {left: new Set(state.interf.left_plate.filter(number => number > 0)),
                               right: new Set(state.interf.right_plate.filter(number => number > 0))};
-                var outcome = play(state.game, plates);
+                var outcome = play(state.game, plates, state.first_round);
                 register_play(state, plates, outcome);
                 if (outcome != illegal_move) {
                     place_plates_up(outcome);
@@ -360,7 +398,14 @@ function new_state() {
             
             var text;
             if (filtered_possibilities.size == 0) {
-                text = "<span>Réponse correcte&nbsp;!</span> <span>Clé&nbsp;: " + state.trace + "</span>";
+                text = "<span>Réponse correcte&nbsp;!</span> <span>";
+                if (state.first_round.over) {
+                    state.second_round = { over: true, won: true };
+                    text += "Clé&nbsp;: " + state.trace + "</span>";
+                } else {
+                    state.first_round = { over: true, won: true };
+                    text += "Maintenant, deuxième manche&nbsp;!</span>";
+                }
             } else {
                 var oddball_index = Math.floor(Math.random() * filtered_possibilities.size);
                 var iter = filtered_possibilities.values();
@@ -376,6 +421,12 @@ function new_state() {
                         (oddball.heavier ? "lourde" : "légère");
                 }
                 text += "</div>";
+
+                if (state.first_round.over) {
+                    state.second_round = { over: true, won: false };
+                } else {
+                    state.first_round = { over: true, won: false };
+                }
             }
             document.getElementById("result-block").innerHTML = text;
             
@@ -571,6 +622,8 @@ function place_balls(state) {
         } else {
             document.getElementById("cue-ball").style.display = null;;
         }
+    } else if (state.first_round.over && state.first_round.won && !state.second_round.over) {
+        document.getElementById("measure-button").innerText = "Deuxième manche";
     } else {
         document.getElementById("measure-button").innerText = "Rejouer";
     }
