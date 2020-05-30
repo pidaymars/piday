@@ -88,7 +88,18 @@ function observe(possibilities, plates, outcome) {
 }
 
 function choose_outcome(possibilities, plates) {
-    var outcomes = [left_heavier, right_heavier, same_weight];
+    var outcomes;
+
+    outcomes = [left_heavier, right_heavier, same_weight];
+    outcomes = outcomes.filter(function(outcome) {
+        var score = observe(possibilities, plates, outcome).size;
+        return (score >= possibilities.size/2);
+    });
+    if (outcomes.length > 0) {
+        return outcomes[Math.floor(Math.random() * outcomes.length)];
+    }
+    
+    outcomes = [left_heavier, right_heavier, same_weight];    
     outcomes = outcomes.filter(function(outcome) {
         var score = observe(possibilities, plates, outcome).size;
         return (score >= possibilities.size/4);
@@ -305,7 +316,7 @@ function new_state() {
 
     var measure_click = function (event) {
         if (state.interf.over) {
-            document.getElementById("result-block").innerText = "";
+            document.getElementById("result-block").innerHTML = "";
             reset_state(state);
             place_balls(state);
             place_plates_down();
@@ -349,7 +360,7 @@ function new_state() {
             
             var text;
             if (filtered_possibilities.size == 0) {
-                text = "Réponse correcte! Clé: " + state.trace;
+                text = "<span>Réponse correcte&nbsp;!</span> <span>Clé&nbsp;: " + state.trace + "</span>";
             } else {
                 var oddball_index = Math.floor(Math.random() * filtered_possibilities.size);
                 var iter = filtered_possibilities.values();
@@ -357,15 +368,16 @@ function new_state() {
                 for (var i = 0; i < oddball_index; i++) {
                     oddball = iter.next().value;
                 }
-                text = "Réponse incorrecte: ";
+                text = "<div>Réponse incorrecte&nbsp;: ";
                 if (answer_number == oddball.number) {
-                    text += "la boule " + oddball.number + " est plus " + (oddball.heavier ? "lourde" : "légère");
+                    text += "la boule </div> <div>" + oddball.number + " est plus " + (oddball.heavier ? "lourde" : "légère");
                 } else {
-                    text += "c'est la boule " + oddball.number + " qui est plus " +
+                    text += "c'est la </div> <div>boule " + oddball.number + " qui est plus " +
                         (oddball.heavier ? "lourde" : "légère");
                 }
+                text += "</div>";
             }
-            document.getElementById("result-block").innerText = text;
+            document.getElementById("result-block").innerHTML = text;
             
             state.interf.over = true;
         }
@@ -395,23 +407,23 @@ function place_remaining_moves(state) {
 }
 
 function place_plates_down() {
-    document.getElementById("left_plate").style.top = plates_y_down;
-    document.getElementById("right_plate").style.top = plates_y_down;
+    document.getElementById("left_plate").style.top = plates_y_down+"px";
+    document.getElementById("right_plate").style.top = plates_y_down+"px";
 }
 
 function place_plates_up(outcome) {
    switch (outcome) {
    case left_heavier:
-       document.getElementById("left_plate").style.top = plates_y_up+plates_delta;
-       document.getElementById("right_plate").style.top = plates_y_up-plates_delta;
+       document.getElementById("left_plate").style.top = (plates_y_up+plates_delta)+"px";
+       document.getElementById("right_plate").style.top = (plates_y_up-plates_delta)+"px";
        break;
    case right_heavier:
-       document.getElementById("left_plate").style.top = plates_y_up-plates_delta;
-       document.getElementById("right_plate").style.top = plates_y_up+plates_delta;
+       document.getElementById("left_plate").style.top = (plates_y_up-plates_delta)+"px";
+       document.getElementById("right_plate").style.top = (plates_y_up+plates_delta)+"px";
        break;
    case same_weight:
-       document.getElementById("left_plate").style.top = plates_y_up;
-       document.getElementById("right_plate").style.top = plates_y_up;
+       document.getElementById("left_plate").style.top = plates_y_up+"px";
+       document.getElementById("right_plate").style.top = plates_y_up+"px";
        break;
     }
 }
@@ -442,6 +454,7 @@ function create_balls() {
     for (var i = 1; i <= 12; i++) {
         var ball = document.createElement("div");
         ball.classList.add("ball");
+        ball.classList.add("noselect");
         if (i>8) {
             var strip_top = document.createElement("div");
             ball.appendChild(strip_top);
@@ -459,9 +472,7 @@ function create_balls() {
     return balls;
 }
 
-function ball_click(state, element, number) {
-    console.log(state);
-    
+function ball_click(state, element, number) {    
     if (state.interf.over) { return; }
     
     if (state.game.remaining_moves > 0) {
@@ -513,8 +524,8 @@ function place_balls(state) {
         ball = state.balls[state.interf.store[i]-1];
         document.getElementById("store").appendChild(ball);
         ball.style.position = "absolute";
-        ball.style.top = next_y;
-        ball.style.left = next_x;
+        ball.style.top = next_y+"px";
+        ball.style.left = next_x+"px";
         next_x += ball_width;
         if (i % 6 == 5) {
             next_x = 0;
@@ -532,8 +543,8 @@ function place_balls(state) {
                        coordinates = coordinates_in_plate(i);
                        plate.element.appendChild(ball);
                        ball.style.position = "absolute";
-                       ball.style.top = coordinates.top;
-                       ball.style.left = coordinates.left
+                       ball.style.top = coordinates.top+"px";
+                       ball.style.left = coordinates.left+"px";
                    }
                }
            });
@@ -552,9 +563,9 @@ function place_balls(state) {
         document.getElementById("answer-block").style.visibility = "visible";
         if (state.interf.answer_slot > 0) {
             ball = state.balls[state.interf.answer_slot-1];
-            ball.style.position = null;
+            ball.style.position = "relative";
             ball.style.top = null;
-            ball.style.bottom = null;
+            ball.style.left = null;
             document.getElementById("answer-slot").appendChild(ball);
             document.getElementById("cue-ball").style.display = "none";
         } else {
@@ -565,24 +576,27 @@ function place_balls(state) {
     }
 }
 
-state = new_state();
-
 // Handle window resize
 
 function window_resize() {
-    var scale = Math.min(window.innerHeight/(693+20), 1);
+    var scale = Math.min((window.innerHeight-50)/(693+20),
+                         document.getElementById("width-ref").clientWidth/900,
+                         1);
     
     document.getElementById("board").style.transform = "scale(" + scale + ")";
     document.getElementById("board").style['transform-origin'] = "top left";
-    document.getElementById("board").style.width = 900*scale;
-    document.getElementById("board").style.height = 693*scale;
+    document.getElementById("board").style.width = (900*scale)+"px";
+    document.getElementById("board").style.height = (693*scale)+"px";
 
     document.getElementById("answer-slot").style.transform = "scale(" + scale + ")";
     document.getElementById("answer-slot").style['transform-origin'] = "top left";
-    document.getElementById("answer-slot").style.width = 100*scale;
-    document.getElementById("answer-slot").style.height = 100*scale;
+    document.getElementById("answer-slot").style.width = (100*scale)+"px";
+    document.getElementById("answer-slot").style.height = (100*scale)+"px";
 
 }
 
-window.addEventListener("resize", window_resize);
-window_resize();
+window.addEventListener("load", function(event) {
+    state = new_state();
+    //window.addEventListener("resize", window_resize);
+    window_resize();
+});

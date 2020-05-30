@@ -1,0 +1,144 @@
+.balls-game {
+font-family: Helvetica;
+position: relative;
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+}
+@media only screen and (max-device-width: 1025px) {
+  .balls-game {
+    font-size: 150%;
+  }
+}
+@media only screen and (max-device-width: 769px) {
+  .balls-game {
+    font-size: 200%;
+  }
+}
+.balls-game * {
+  font-size: 1em;
+}
+
+.balls-game .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.balls-game .ball {
+  width: 99px;
+  height: 99px;
+  border-radius: 50%;
+  border: 30px solid;
+  border-color: #C00020;
+  text-align: center;
+  line-height: 39px;
+  font-size: 30px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: Helvetica;
+  cursor: pointer;
+}
+
+.balls-game .ball .strip-top, .ball .strip-bottom {
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-color: white;
+  position: absolute;
+  top: -28px;
+  left: -28px;
+}
+.balls-game .ball .strip-top {
+  clip-path: inset(0 0 75px 0);
+}
+.balls-game .ball .strip-bottom {
+  clip-path: inset(75px 0 0 0);
+}
+
+.balls-game .ball span {
+  display: inline-block;
+  transform: translate(0px, -2px);
+}
+.balls-game .ball .strip span {
+  transform: translate(0px, 25px);
+}
+
+.balls-game .cue-ball {
+  border: 1px solid black;
+}
+
+.balls-game .plate {
+  width: 300px;
+  height: 273.2px;
+  border-bottom: 10px solid black;
+}
+
+.balls-game .scale {
+  width: 900px;
+  height: 433.2px;
+  border-bottom: 10px solid #808080;
+}
+
+.balls-game .moves {
+  padding: 0px 5px 5px 5px;
+  font-size: 2em;
+  border: 1px solid black;
+  /*cursor: pointer;*/
+  color: #000000;
+  text-align: center;
+}
+.balls-game .measure-button {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #28a745;
+  color: white;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  padding: 7px 12px 7px 12px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.balls-game .measure-button:hover {
+  background-color: #218838;
+}
+
+.balls-game .answer-select {
+  margin-left: 20px;
+}
+
+.balls-game .store {
+  width: 600px;
+  height: 200px;
+}
+
+.balls-game .board {
+  width: 900px;
+  height: 693px;
+position: relative;
+float: left;
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+}
+
+.balls-game .scale {
+  width: 900px;
+  height: 433px;
+  display: block;
+}
+
+.balls-game .result-block div {
+  display: inline-block;
+}
+
+.balls-game .answer-block {
+  visibility: hidden;
+}
+
+.balls-game table {
+    border-spacing: 0;
+}

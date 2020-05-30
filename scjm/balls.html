@@ -1,160 +1,4 @@
----
-title: Chasse au trésor mathématique - Jour 2
-device : unknown
-permalink: /scjm/balls
----
-
-<html>
-
-<head>
-
-<meta charset="UTF-8">
-
-<style>
-body {
-font-family: Helvetica;
-}
-@media only screen and (max-device-width: 1025px) {
-  body {
-    font-size: 3vw;
-  }
-}
-@media only screen and (max-device-width: 769px) {
-  body {
-    font-size: 5vw;
-  }
-}
-body * {
-  font-size: 1em;
-}
-
-.ball {
-  width: 99px;
-  height: 99px;
-  border-radius: 50%;
-  border: 30px solid;
-  border-color: #C00020;
-  text-align: center;
-  line-height: 39px;
-  font-size: 30px;
-  box-sizing: border-box;
-  display: inline-block;
-  font-family: Helvetica;
-  cursor: pointer;
-}
-
-.ball .strip-top, .ball .strip-bottom {
-  width: 93px;
-  height: 93px;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  background-color: white;
-  position: absolute;
-  top: -28px;
-  left: -28px;
-}
-.ball .strip-top {
-  clip-path: inset(0 0 75px 0);
-}
-.ball .strip-bottom {
-  clip-path: inset(75px 0 0 0);
-}
-
-.ball span {
-  display: inline-block;
-  transform: translate(0px, -2px);
-}
-.ball .strip span {
-  transform: translate(0px, 25px);
-}
-
-.cue-ball {
-  border: 1px solid black;
-}
-
-.plate {
-  width: 300px;
-  height: 273.2px;
-  border-bottom: 10px solid black;
-}
-
-.fulcrum {
-  height: 0;
-  width: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid black;
-}
-
-.scale {
-  width: 900px;
-  height: 433.2px;
-  border-bottom: 10px solid #808080;
-}
-
-.moves {
-  padding: 0px 5px 5px 5px;
-  font-size: 2em;
-  border: 1px solid black;
-  /*cursor: pointer;*/
-  color: #000000;
-  text-align: center;
-}
-.measure-button {
-  display: inline-block;
-  vertical-align: middle;
-  background-color: #28a745;
-  color: white;
-  border-radius: 7px;
-  border: 1px solid transparent;
-  padding: 7px 12px 7px 12px;
-  margin-left: 20px;
-  cursor: pointer;
-}
-.measure-button:hover {
-  background-color: #218838;
-}
-
-.answer-select {
-  margin-left: 20px;
-}
-
-.store {
-  width: 600px;
-  height: 200px;
-}
-
-.board {
-  width: 900px;
-  height: 693px;
-position: relative;
-float: left;
-}
-
-.scale {
-  width: 900px;
-  height: 433px;
-  display: block;
-}
-
-.measure-block {
-  float: left;
-  margin: 20px;
-}
-.answer-block {
-  float: left;
-  margin: 20px;
-  visibility: hidden;
-}
-.result-block {
-  float: left;
-  margin: 20px;
-  visibiity: hidden;
-}
-</style>
-
-</head>
-<body>
+<div id="balls-game" class="balls-game">
   
   <div id="board" class="board">
 
@@ -167,27 +11,49 @@ float: left;
       
     </div>
     
-  </div><table id="measure-block" class="measure-block">
-      <tr>
-      <td id="moves" class="moves">&#9878;&nbsp;&#9878;&nbsp;&#9878;</td>
-      <td><div id="measure-button" class="measure-button">Mesurer</div></td>
-      </tr>
-    </table>
+  </div>
 
-    <table id="answer-block" class="answer-block">
-      <tr>
-        <td><div id="answer-slot"><div id="cue-ball" class="ball cue-ball"></div></div></td>
-        <td><select id="answer-select" class="answer-select">
-            <option value="lighter">Plus légère</option>
-            <option value="heavier">Plus lourde</option>
-        </select></td>
-      </tr>
-    </table>
+  <table>
+    
+  <tr id="measure-block" class="measure-block">
+    <td>
+      <table>
+        <tr>
+          <td><div id="moves" class="moves noselect" style="float: left">&#9878;&nbsp;&#9878;&nbsp;&#9878;</div></td>
+          <td><div id="measure-button" class="measure-button">Mesurer</div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 
-    <div id="result-block" class="result-block">
-    </div>
+  <tr> <!-- phantom measure block -->
+    <td>
+      <div style="visibility: hidden; height: 0px" class="measure-block">
+      <table>
+        <tr>
+          <td><div class="moves noselect" style="float: left">&#9878;&nbsp;&#9878;&nbsp;&#9878;</div></td>
+          <td><div class="measure-button">Proposer&nbsp;réponse</div></td>
+        </tr>
+      </table>
+      </div>
+    </td>
+  </tr>
   
-<script src="balls.js"></script>
+  <tr id="answer-block" class="answer-block">
+    <td>
+      <table>
+        <tr>
+          <td id="answer-slot" style="float: left"><div id="cue-ball" class="ball cue-ball"></div></td>
+          <td><select id="answer-select" class="answer-select">
+              <option value="lighter">Plus légère</option>
+              <option value="heavier">Plus lourde</option>
+          </select></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
   
-</body>
-</html>
+  <tr><td id="result-block" class="result-block"></td></tr>
+  </table>
+
+</div>

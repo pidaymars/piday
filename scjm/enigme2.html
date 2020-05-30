@@ -51,20 +51,22 @@ permalink: /scjm/2
                             corner_ribbon_label)});
       $(".corner-ribbon-link").attr("href","#");
       }
-     </script>
+    </script>
+    <link rel="stylesheet" type="text/css" href="balls-style.css">
+    <script src="balls.js"></script>
+ 
 </head>
 <body>
     <div class="main">
         <h1>Deux poids trois mesures</h1>
-        <p>
-            Vous disposez de 12 boules de billiards d'apparence identiques. Mais parmi ces 12 boules, l'une d'entre elles comporte est faussée et ne fait pas le même poids que les autres (vous ignorez si elle est plus lourde ou plus légère). Vous voudriez identifier cette boule anormale. Pour cela, vous disposez d'une balance à plateaux.
+        <p id="width-ref">
+            Vous disposez de 12 boules de billiards d'apparence identiques. Cependant, l'une d'entre elles est faussée et ne fait pas le même poids que les autres (vous ignorez si elle est plus lourde ou plus légère)&nbsp;: vous voudriez identifier cette boule anormale. Pour cela, vous disposez d'une balance à plateaux.
         </p>
         <p class="question">En seulement 3 pesées, identifiez la boule anormale, et déterminez si elle est plus lourde ou plus légère que les autres.</p>
         <p>Utilisez la mini application ci-dessous pour réaliser vos pesées. Lorsque vous réussissez, vous obtenez un code à remplir dans le formulaire de réponse.</p>
-        <center><p><a href="https://forms.gle/Z6Q1fiZZXf6nLHGJ9" class="answer">Envoyez votre réponse</a></p></center>
 
-        <p>Rendez-vous demain (samedi 31 mai 2020) 18h (heure de Paris) sur <a href="https://youtu.be/yYC3W27BnqE">YouTube</a> pour la réponse et la dernière énigme !</p>
-    </div>
+    {% include_relative balls.html %}
+        
     <footer>Association Pi Day</footer>
 </body>
 </html>
