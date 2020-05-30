@@ -12,8 +12,8 @@ html {
 }
 .main {
    background-color : #fff;
-   width : 45em;
-   max-width : 85%;
+   width : 85%;
+   max-width : 900px;
    padding : 4em 2em;
    border-radius : 1em;
    margin : 1em auto;
@@ -137,4 +137,8 @@ a, a:visited {
 a:hover, a:focus {
     color: #23527c;
     text-decoration: underline;
+}
+a.disabled {
+  pointer-events: none;
+  cursor: default;
 }
