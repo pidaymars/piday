@@ -50,8 +50,8 @@ margin-bottom: 1.5em;
   border: 1px solid transparent;
   background-color: white;
   position: absolute;
-  top: -28px;
-  left: -28px;
+  top: -27.5px;
+  left: -27.5px;
 }
 .balls-game .ball .strip-top {
   clip-path: inset(0 0 75px 0);
