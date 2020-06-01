@@ -31,6 +31,7 @@ h1 {
 h2 {
     color : #666;
     font-weight : 300;
+    margin-top: 4em;
 }
 p {
     line-height : 1.6em;
@@ -141,4 +142,82 @@ a:hover, a:focus {
 a.disabled {
   pointer-events: none;
   cursor: default;
+}
+
+.deck {
+   display : block;
+   margin : 2em 0;
+   height : 12em;
+}
+.card {
+    position : absolute;
+    top : inherit;
+    display : block;
+    background-color : #f6f6f6;
+    background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+    color : #000;
+    font-family : 'Helvetica-Neue', Helvetica, sans-serif;
+    border : 1px solid #eee;
+    border-radius : .7em;
+    box-shadow: -.1em 0 .5em rgba(0,0,0,0.1);
+    font-size : .8em;
+    font-weight : bold;
+    /*height : 10em;
+    width : 6em;*/
+    padding : .45em;
+    margin : .2em;
+    height : 12em;
+    width : 7.5em;
+}
+
+.number {
+  display : block;/*
+  color: #f06;*/
+  text-align: center;
+  font-size : 3.8em;
+    line-height: 2.4em;
+}
+.corner {
+  display:block;
+  text-align:left;
+  transform : rotate(180deg);
+}
+@media (min-width: 1000px) {
+    .card:hover {
+      transform-origin: bottom center;
+      transform: rotate(-10deg) translate(-4.5em,2em);
+      transition : transform .3s;
+      transition-timing-function: ease-in-out;
+    }
+}
+@media (max-width: 1000px) {
+    .deck {
+        height: 50em;
+    }
+    .card{
+        /*left : 40%;*/
+    }
+    .card:hover {
+        transform-origin: bottom center;
+        transform: rotate(-10deg) translate(-5em,-1em);
+        transition : transform .3s;
+        transition-timing-function: ease-in-out;
+    }
+}
+nav {
+    height : 2em;
+    margin : 2em 0;
+}
+nav .next {
+    float : right;
+}
+nav .previous::before {
+    content: "<< ";
+}
+nav .next::after {
+
+    content: " >>";
+}
+nav .previous {
+    float: left;
 }

@@ -1,0 +1,170 @@
+---
+title: Chasse au trésor mathématique - Jour 1
+device : unknown
+permalink: /scjm/3
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Carte mystère - Jour 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chasse_au_tresor.css">
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-59791230-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="chasse_au_tresor.js"></script> -->
+    <script>
+        var em = 16;
+        number_size = 1.4*em;
+        var max_width = 1000;
+        function show() {
+            var decks = document.getElementsByClassName("deck");
+            for (i = 0; i < decks.length; i++) {
+                var cards = decks[i].getElementsByClassName("card");
+                for(j = 0; j < cards.length; j++) {
+                    cards[j].style.zIndex = j;
+                    cards[j].style.top = "inherit";
+                    cards[j].style.left = "inherit";
+                    if (window.innerWidth > max_width){
+                        cards[j].style.left = (cards[j].offsetLeft + number_size*j).toString() + "px";
+                    }
+                    else {
+                        cards[j].style.top = (cards[j].offsetTop + number_size*j).toString() + "px";
+                        cards[j].style.left = (cards[j].offsetLeft + 0.4 * window.innerWidth).toString() + "px";
+                    }
+                }
+            }
+        }
+        function init() {
+            var decks = document.getElementsByClassName("deck");
+            for (i = 0; i < decks.length; i++) {
+                var cards = decks[i].getElementsByClassName("card");
+                for(j = 0; j < cards.length; j++) {
+                    cards[j].style.zIndex = j;
+                    if (window.innerWidth > max_width){
+                        cards[j].style.left = "inherit";
+                        cards[j].style.left = (cards[j].offsetLeft + number_size*j).toString() + "px";
+                    }
+                    else {
+                        cards[j].style.left = (0.4 * window.innerWidth).toString() + "px";
+                        cards[j].style.top = (cards[j].offsetTop + number_size*j).toString() + "px";
+                    }
+                    var number = cards[j].innerHTML;
+                    cards[j].innerHTML += "<span class=\"number\">"+ number +"</span>";
+                    cards[j].innerHTML += "<span class=\"corner\">"+ number +"</span>";
+                }
+            }
+        }
+        document.addEventListener('readystatechange', function() {
+            if (document.readyState === "complete") {
+                init();
+            }
+        });
+        window.addEventListener('resize', show);
+    </script>
+ 
+</head>
+<body>
+    <div class="main" id="bla">
+        <nav>
+               <a href="2" class="previous">Enigme précédente</a>
+        </nav>
+        <h1>Carte mystère</h1>
+        <p>Désireux de recruter un.e nouvel.le assistant.e, le célèbre mathémagicien Fubini (mondialement connu pour son prodigieux tour d'interversion des sommes et intégrales en tous genres), publie une annonce dans le journal invitant les plus téméraires à venir relever un défi mathématique "digne de la magie noire !". Intrigué par cette alléchante proposition, vous sautez sur l'occasion et vous rendez aussitôt dans le manoir de l'excentrique personnage.</p>
+        
+         <p>A votre arrivée sur les lieux, vous croisez le précédent candidat sortant de son entrevue visiblement perplexe, mais vous restez déterminé et entrez d'un pas décidé dans l'impressionante demeure. Après les politesses d'usage et quelques questions mathématiques auxquelles vous répondez sans difficulté, Fubini sort de sa poche un paquet de 32 cartes qu'il vous laisse examiner en détail. Les cartes sont numérotées de 1 à 32 et rangées dans l'ordre de 1 à 32 (1 sur le dessus, 32 sur le dessous) comme ci-dessous:</p>
+         <ol class="deck">
+             <li class="card">1</li>
+             <li class="card">2</li>
+             <li class="card">3</li>
+             <li class="card">4</li>
+             <li class="card">5</li>
+             <li class="card">6</li>
+             <li class="card">7</li>
+             <li class="card">8</li>
+             <li class="card">9</li>
+             <li class="card">10</li>
+             <li class="card">11</li>
+             <li class="card">12</li>
+             <li class="card">13</li>
+             <li class="card">14</li>
+             <li class="card">15</li>
+             <li class="card">16</li>
+             <li class="card">17</li>
+             <li class="card">18</li>
+             <li class="card">19</li>
+             <li class="card">20</li>
+             <li class="card">21</li>
+             <li class="card">22</li>
+             <li class="card">23</li>
+             <li class="card">24</li>
+             <li class="card">25</li>
+             <li class="card">26</li>
+             <li class="card">27</li>
+             <li class="card">28</li>
+             <li class="card">29</li>
+             <li class="card">30</li>
+             <li class="card">31</li>
+             <li class="card">32</li>
+         </ol>
+         <p>Il reprend alors le paquet de carte et effectue devant vous un <a href="#americain" id="motamericain">mélange américain</a>, puis ou <a href="#coupe" id="motcoupe">coupe</a> le paquet. Sans vous la montrer, il prend alors la carte sur le dessus du paquet, et la remet dans le paquet à un autre endroit. Puis il effectue un second mélange américain, suivi d'une coupe. A l'issu de ces opérations, il dispose les cartes en éventail devant vous, et vous met au défi de retrouver la carte qu'il a déplacée : 
+        </p>
+        <ol class="deck">
+            <li class="card">23</li>
+            <li class="card">10</li>
+            <li class="card">31</li>
+            <li class="card">11</li>
+            <li class="card">32</li>
+            <li class="card">24</li>
+            <li class="card">1</li>
+            <li class="card">12</li>
+            <li class="card">2</li>
+            <li class="card">25</li>
+            <li class="card">26</li>
+            <li class="card">13</li>
+            <li class="card">14</li>
+            <li class="card">22</li>
+            <li class="card">15</li>
+            <li class="card">27</li>
+            <li class="card">3</li>
+            <li class="card">16</li>
+            <li class="card">28</li>
+            <li class="card">29</li>
+            <li class="card">4</li>
+            <li class="card">17</li>
+            <li class="card">18</li>
+            <li class="card">5</li>
+            <li class="card">6</li>
+            <li class="card">7</li>
+            <li class="card">19</li>
+            <li class="card">20</li>
+            <li class="card">21</li>
+            <li class="card">8</li>
+            <li class="card">9</li>
+            <li class="card">30</li>
+        </ol>
+        <p class="question">Quelle carte a été déplacée ?</p>
+        <center><p><a href="https://forms.gle/fJA5kNcusM2jmkw98" class="answer">Envoyez votre réponse</a></p></center>
+        
+        <h2>Un peu de vocabulaire</h2>
+        <h3><a id="coupe" href="#motcoupe">Coupe</a></h3>
+        <p>Effectuer une coupe sur un paquet de cartes consiste à diviser aléatoirement le paquet en 2 piles (pas forcément de même taille) puis mettre la pile de dessus en dessous.</p>
+        <img src="coupe.png" style="display: block; width: 80%; margin: 2em auto;" alt="Un exemple de coupe">
+        <h3><a id="americain" href="#motamericain">Mélange américain</a></h3>
+        <p>Effectuer une mélange américain sur un paquet de cartes consiste à diviser aléatoirement le paquet en 2 piles (pas forcément de même taille) puis entrelacer de manière aléatoire les cartes de chacun des paquets.</p>
+        <img src="riffle_shuffle.png" style="display: block; width: 80%; margin: 2em auto;" alt="Un exemple de mélange américain">
+        <center><p><a href="https://forms.gle/jYUwRucdFQzJnmi67" id="answer-form-link" class="answer" style="visibility: hidden">Envoyez votre réponse</a></p></center>
+        <nav>
+               <a href="2" class="previous">Enigme précédente</a>
+        </nav>
+    </div>
+    
+    <footer>Association Pi Day</footer>
+</body>
+</html>
