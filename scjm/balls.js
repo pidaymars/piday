@@ -408,8 +408,8 @@ function new_state() {
                 if (state.first_round.over) {
                     state.second_round = { over: true, won: true };
                     text += "Clé&nbsp;: " + state.trace + "</span>";
-                    document.getElementById("answer-form-link").href = "https://docs.google.com/forms/d/e/1FAIpQLSecV-S386C40v0tD90btNxXrzJNG_9k5_yHnsGYrkDfskverg/viewform?entry.1752604776=" + state.trace
-                    document.getElementById("answer-form-link").style.visibility = "visible";
+                    //document.getElementById("answer-form-link").href = "https://docs.google.com/forms/d/e/1FAIpQLSecV-S386C40v0tD90btNxXrzJNG_9k5_yHnsGYrkDfskverg/viewform?entry.1752604776=" + state.trace
+                    //document.getElementById("answer-form-link").style.visibility = "visible";
                 } else {
                     state.first_round.over = true;
                     state.first_round.won = true;
